@@ -7,7 +7,7 @@ include("configuracion.php"); //conexion de base de datos
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Usuario</title>
+<title>Usuarios</title>
 </head>
 
 <body>
@@ -16,15 +16,14 @@ include("configuracion.php"); //conexion de base de datos
 
 <table border="2" align="center">
 <tr>
-        <td align="center" colspan="6">Datos</td>
+        <td align="center" colspan="5">Datos</td>
 </tr>
 
 <tr>
-        <td>id de Usuario</td>
-		<td>Nombre</td>
-		<td>id de Empleado</td>
-		<td>Tipo</td>
-		<td align="center" colspan="2">Accion</td>
+        <td>ID de Usuario</td>
+		<td align="center">Nombre</td>
+		<td align="center">Tipo</td>
+		<td align="center" colspan="2">Acción</td>
 </tr>
 
 <?php
@@ -36,7 +35,6 @@ include("configuracion.php"); //conexion de base de datos
 				   <tr>
 				         <td><?php echo $registro["idUsuario"]; ?></td>
 						 <td><?php echo $registro["apellidoP"], ' ', $registro["apellidoM"], ' ', $registro["nombre"]; ?></td>
-						 <td><?php echo $registro["idEmpleado"]; ?></td>
 						 <td><?php echo $registro["tipoempleado"], ' ', $registro["precio"]; ?></td>
 						 <td><a href="editar.php?id=<?php echo $registro["idproducto"];?>">Editar</a></td>
 						 <!-- se hipervincula al archivo editar mandando como parametros o valores heredados
