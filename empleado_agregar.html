@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- <link rel="stylesheet" type="text/css" href="../css/base_template.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+<center>
+<form id="alta_usuario" action="{SET}" method="POST">
+  <div class="item_requerid">Apellido Paterno</div>
+  <div class="form_requerid"><input type="text"  name="Apaterno" pattern="[A-Za-z ]+" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required id="Apaterno" maxlength="20"></div>
+
+  <div class="item_requerid">Apellido Materno</div>
+  <div class="form_requerid"><input type="text" name="Amaterno"  pattern="[A-Za-z ]+" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required id="Amaterno" maxlength="20"></div>
+
+  <div class="item_requerid">Nombre</div>
+  <div class="form_requerid"><input type="text" name="nombre" pattern="[A-Za-z ]+" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required id="nombre" maxlength="20"></div>
+
+  <div class="item_requerid">Sexo</div>
+        <select name="sexo">
+              <option value="H">Hombre</option>
+              <option value="M">Mujer</option>
+    	</select> 
+
+  <div class="item_requerid">fecha de nacimiento</div>
+  <div class="form_requerid"><input type="date" name="fechanac" id="fechanac"></div>
+
+    <div class="item_requerid">telefono</div>
+  <div class="form_requerid"><input type="text" name="telefono" pattern="[0-9]+" required="" id="telefono" maxlength="10"></div>
+
+    <div class="item_requerid">calle</div>
+  <div class="form_requerid"><input type="text" name="calle" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required id="calle" maxlength="40" ></div>
+
+    <div class="item_requerid">colonia</div>
+  <div class="form_requerid"><input type="text" name="colonia" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required id="colonia" maxlength="40"></div>
+
+    <div class="item_requerid">Codigo postal</div>
+  <div class="form_requerid"><input type="text" name="codigo" pattern="[0-9]+" required="" id="codigo" maxlength="5" minlength="5"></div>
+
+    <div class="item_requerid">ciudad</div>
+  <div class="form_requerid"><input type="text" name="ciudad" pattern="[A-Za-z ]+" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required id="ciudad" maxlength="40"></div>
+
+    <div class="item_requerid">email</div>
+  <div class="form_requerid"><input type="email" name="email" required="" id="email"></div>
+  
+  <div class="form_button"><input type="submit" name="enviar" id="enviar" value="Agregar"></div>
+</form>
+</center>

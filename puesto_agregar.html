@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- <link rel="stylesheet" type="text/css" href="../css/base_template.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+<center>
+<form id="alta_usuario" action="{SET}" method="POST">
+
+  <div class="item_requerid">Tipo del puesto</div>
+  <div class="form_requerid"><input type="text" name="tipopuesto" pattern="[A-Za-z ]+" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" required id="tipopuesto" maxlength="20"></div>
+
+  <div class="item_requerid">Sueldo</div>
+  <div class="form_requerid"><input type="number" name="sueldo" required id="sueldo" maxlength="20"></div>
+
+  <div class="form_button"><input type="submit" name="enviar" id="enviar" value="Agregar"></div>
+</form>
+</center>
