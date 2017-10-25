@@ -44,10 +44,10 @@ include("configuracion.php"); //conexion de base de datos
 						 <td><?php echo $registro["telefono"]; ?></td>
 						 <td><?php echo 'Calle ', $registro["calle"], ', Colonia ', $registro["colonia"], ', C.P. ', $registro["codigo_postal"], ', ', $registro["ciudad"]; ?></td>
 						 <td><?php echo $registro["e_mail"]; ?></td>
-						 <td><a href="editar.php?id=<?php echo $registro["idproducto"];?>">Editar</a></td>
+						 <td><a href="editar.php?id=<?php echo $registro["idEmpleado"];?>">Editar</a></td>
 						 <!-- se hipervincula al archivo editar mandando como parametros o valores heredados
                               el valor de id con variable "id" para su manipulacion	 -->
-						 <td><a href="eliminar.php?id=<?php echo $registro["idproducto"];?>">Eliminar</a></td>
+						 <td><a href="eliminar_empleado.php?id=<?php echo $registro["idEmpleado"];?>">Eliminar</a></td>
 						 <!-- se hipervincula al archivo eliminar mandando como parametros o valores heredados
                               el valor de id con variable "id" para su manipulacion	 -->
 				   </tr>
