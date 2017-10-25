@@ -28,7 +28,10 @@ include("configuracion.php"); //conexion de base de datos
 </tr>
 
 <?php
-         $consulta = mysqli_query($conexion,"SELECT idUsuario, idEmpleado, idPuesto, nombreUsuario, apellidoP, apellidoM, nombre, tipoempleado, visible FROM usuario NATURAL JOIN empleado NATURAL JOIN puesto WHERE visible = 1");
+         $consulta = mysqli_query($conexion,"SELECT idUsuario, idEmpleado, idPuesto, nombreUsuario, apellidoP, apellidoM, nombre, tipoempleado, visible
+											FROM usuario NATURAL JOIN empleado NATURAL JOIN puesto
+											WHERE visible = 1
+											ORDER BY nombreUsuario");
 		 //consulta donde muestra solamente los campos que esten activados por la bandera
 		    while($registro = mysqli_fetch_array($consulta))
 			{
@@ -41,7 +44,7 @@ include("configuracion.php"); //conexion de base de datos
 						 <td><a href="editar_usuario.php?id=<?php echo $registro["idUsuario"];?>">Editar</a></td>
 						 <!-- se hipervincula al archivo editar mandando como parametros o valores heredados
                               el valor de id con variable "id" para su manipulacion	 -->
-						 <td><a href="eliminar.php?id=<?php echo $registro["idproducto"];?>">Eliminar</a></td>
+						 <td><a href="eliminar_usuario.php?id=<?php echo $registro["idUsuario"];?>">Eliminar</a></td>
 						 <!-- se hipervincula al archivo eliminar mandando como parametros o valores heredados
                               el valor de id con variable "id" para su manipulacion	 -->
 				   </tr>
