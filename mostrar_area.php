@@ -37,7 +37,7 @@ include("configuracion.php"); //conexion de base de datos
 						 <td><a href="editar.php?id=<?php echo $registro["id_area"];?>">Editar</a></td>
 						 <!-- se hipervincula al archivo editar mandando como parametros o valores heredados
                               el valor de id con variable "id" para su manipulacion	 -->
-						 <td><a href="eliminar.php?id=<?php echo $registro["id_area"];?>">Eliminar</a></td>
+						 <td><a href="eliminar_area.php?id=<?php echo $registro["id_area"];?>">Eliminar</a></td>
 						 <!-- se hipervincula al archivo eliminar mandando como parametros o valores heredados
                               el valor de id con variable "id" para su manipulacion	 -->
 				   </tr>
