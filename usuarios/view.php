@@ -12,10 +12,10 @@ $diccionario = array('subtitle' => array(
 	'VIEW_DELETE_USER' => MODULO . VIEW_DELETE_USER .'/'),
 
 'form_actions' => array(
-	'SET' => '/pw/mvc/' . MODULO . SET_USER .'/',//MODULO = 'usuarios/';
-	'GET' =>'/pw/mvc/' . MODULO . GET_USER .'/',//SET_USER = 'set';
-	'DELETE' => '/pw/mvc/' . MODULO . DELETE_USER .'/',
-	'EDIT' => '/pw/mvc/' . MODULO . EDIT_USER .'/'));
+	'SET' => '/pw/Hospital/' . MODULO . SET_USER .'/',//MODULO = 'usuarios/';
+	'GET' =>'/pw/Hospital/' . MODULO . GET_USER .'/',//SET_USER = 'set';
+	'DELETE' => '/pw/Hospital/' . MODULO . DELETE_USER .'/',
+	'EDIT' => '/pw/Hospital/' . MODULO . EDIT_USER .'/'));
 
 function get_template($form = 'get'){
 	$file = '../site_media/html/usuario_' . $form .'.html';
