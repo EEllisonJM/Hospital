@@ -16,11 +16,10 @@ include("configuracion.php"); //conexion de base de datos
 
 <table border="2" align="center">
 <tr>
-        <td align="center" colspan="6">Datos</td>
+        <td align="center" colspan="5">Datos</td>
 </tr>
 
 <tr>
-        <td>ID de Usuario</td>
 		<td align="center">Nombre de Usuario</td>
 		<td align="center">Nombre</td>
 		<td align="center">Tipo</td>
@@ -28,19 +27,18 @@ include("configuracion.php"); //conexion de base de datos
 </tr>
 
 <?php
-         $consulta = mysqli_query($conexion,"SELECT idUsuario, idEmpleado, idPuesto, nombreUsuario, apellidoP, apellidoM, nombre, tipoempleado, visible
+         $consulta = mysqli_query($conexion,"SELECT idUsuario, idEmpleado, idPuesto, userName, apellidoP, apellidoM, nombre, tipoempleado, visible
 											FROM usuario NATURAL JOIN empleado NATURAL JOIN puesto
-											WHERE visible = 1
-											ORDER BY nombreUsuario");
+											WHERE flag = 1
+											ORDER BY userName");
 		 //consulta donde muestra solamente los campos que esten activados por la bandera
 		    while($registro = mysqli_fetch_array($consulta))
 			{
 				?>
 				   <tr>
-				         <td><?php echo $registro["idUsuario"]; ?></td>
-						 <td><?php echo $registro["nombreUsuario"]; ?></td>
+						 <td><?php echo $registro["userName"]; ?></td>
 						 <td><?php echo $registro["apellidoP"], ' ', $registro["apellidoM"], ' ', $registro["nombre"]; ?></td>
-						 <td><?php echo $registro["tipoempleado"], ' ', $registro["precio"]; ?></td>
+						 <td><?php echo $registro["tipoempleado"]; ?></td>
 						 <td><a href="editar_usuario.php?id=<?php echo $registro["idUsuario"];?>">Editar</a></td>
 						 <!-- se hipervincula al archivo editar mandando como parametros o valores heredados
                               el valor de id con variable "id" para su manipulacion	 -->

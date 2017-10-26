@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
 include("configuracion.php");
-	 $act = "UPDATE Usuario set visible = 0 WHERE idUsuario = ".$_REQUEST["id"]."";
+	 $act = "UPDATE Usuario set flag = 0 WHERE idUsuario = ".$_REQUEST["id"]."";
 	 if(mysqli_query($conexion,$act))
      {
       ?>
