@@ -70,7 +70,7 @@ class Usuario extends DBAbstractModel {
    }
    # Método constructor
    function __construct(){
-     $this->db_name = 'my_db';
+     $this->db_name = 'mydb';
    }
     # Método destructor del objeto
    /*function __destruct(){
