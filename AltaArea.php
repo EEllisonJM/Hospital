@@ -75,11 +75,11 @@ if($_REQUEST['registrar'] == "Registrar")
 
  <div class="item_requerid">Nombre</div>
   <div class="form_requerid">
-  	<input type="text" name="nombre" pattern="[A-Za-z ]+" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="60"></div>
+  	<input type="text" name="nombre" pattern="[A-Za-z0-9 ]+" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="60"></div>
 
   <div class="item_requerid">Descripcion</div>
     <div class="form_requerid">
-  <div class="form_requerid"><input type="text" name="descripcion" pattern="[A-Za-z ]+" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="80"></div>
+  <div class="form_requerid"><input type="text" name="descripcion" pattern="[A-Za-z0-9 ]+" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="80"></div>
 
 
 <input type="submit" name="registrar" value="Registrar">

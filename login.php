@@ -10,7 +10,7 @@ include("configuracion.php");
       ?>
         <script language="javascript">
         alert("\tRellena los Campos Correctamente \n \tFavor de verificar");
-        window.location="../proyecto hospital/logueo.php";
+        window.location="logueo.php";
       </script>           
       <?php
     }
@@ -19,9 +19,8 @@ include("configuracion.php");
        {
             //$pass = md5($_POST["password"]);
 
-            $r = mysqli_query($conexion,"select * from usuario WHERE nombreusuario='".$_REQUEST["user"]."'");
-                        
-                        // and contraseña='".$_REQUEST["pass"]."'");
+            $r = mysqli_query($conexion,"select * from usuario WHERE nombreUsuario='".$_REQUEST["user"]."'
+                        and contraseña='".$_REQUEST["pass"]."'");
       //consulta para validar usuario y contraseña ingresados en la base de datos         
             $r2 = mysqli_fetch_array($r);
       // instruccion para poder visualizar los registros en la base de datos segun corresponda
@@ -35,7 +34,7 @@ include("configuracion.php");
                ?>
                    <script language="javascript">
                    alert("Te haz logueado satisfactoriamente");
-                   window.location="../proyecto hospital/AltaArea.php";
+                   window.location="AltaArea.php";
                    </script>
                <?php
             }
@@ -44,7 +43,7 @@ include("configuracion.php");
           ?>
                  <script language="javascript">
                  alert("Error, Escriba correctamente su Usuario y/o Password");
-                 window.location="../proyecto hospital/logueo.php";
+                 window.location="logueo.php";
                  </script> 
           <?php
             }

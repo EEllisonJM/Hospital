@@ -13,7 +13,7 @@ include("configuracion.php"); //conexion de base de datos
 <body>
 
 <center>
-<form action="../proyecto hospital/login.php" name="entrada_sistema" method="post" enctype="multipart/form-data">
+<form action="login.php" name="entrada_sistema" method="post" enctype="multipart/form-data">
 
 <label>Usuario</label>
 <input type="text" name="user" value="" /><br />
