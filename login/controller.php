@@ -4,54 +4,53 @@ require_once('model.php');
 require_once('view.php');
 
 function handler(){
-	$event = VIEW_GET_USER;//const VIEW_GET_USER = 'buscar';
+	$event = VIEW_GET_LOGIN;//const VIEW_GET_LOGIN = 'buscar';
 	$uri = $_SERVER['REQUEST_URI'];//Obtener todo lo que hay después del dominio[despues de 'localhost']
 	$peticiones = array(
-		SET_USER,//set
-		GET_USER,//get
-		DELETE_USER,//delete
-		EDIT_USER,//edit
-		VIEW_SET_USER,
-		VIEW_GET_USER,
-		VIEW_DELETE_USER,
-		VIEW_EDIT_USER);
+		SET_LOGIN,//set
+		GET_LOGIN,//get
+		DELETE_LOGIN,//delete
+		EDIT_LOGIN,//edit
+		VIEW_SET_LOGIN,
+		VIEW_GET_LOGIN,
+		VIEW_DELETE_LOGIN,
+		VIEW_EDIT_LOGIN);
 
 	foreach($peticiones as $peticion){
-	//usuarioset_
-		$uri_peticion = MODULO . $peticion . '/';//$uri_peticion = MODULO . $peticion . '_';
+	//loginset_
+		$uri_peticion = MODULO . $peticion . '/';
 		if(strpos($uri,$uri_peticion) == true){//Buscar [$uri_peticion] en [$uri]
 			$event = $peticion;
 		}
 	}
 	$user_data = helper_user_data();
-	$usuario = set_obj();
+	$login = set_obj();
 		switch($event){
-
-			case SET_USER://set
-			$usuario -> set($user_data);
-			$data = array('mensaje' => $usuario -> mensaje);
-			retornar_vista(VIEW_SET_USER,$data);
+			case SET_LOGIN://set
+			$login -> set($user_data);
+			$data = array('mensaje' => $login -> mensaje);
+			retornar_vista(VIEW_SET_LOGIN,$data);
 			break;
 
-            case GET_USER://get
-            $usuario -> get($user_data);
+			case GET_LOGIN://get
+			$login -> get($user_data);
             $data =array(
-            	'nombre' => $usuario -> nombre,
-            	'apellido' => $usuario-> apellido,
-            	'email' => $usuario-> email);
-            retornar_vista(VIEW_EDIT_USER,$data);
+            	'nameUser' => $login -> nombre,
+            	'password' => $login-> apellido,
+            	'type' => $login-> email);
+            retornar_vista(VIEW_EDIT_LOGIN,$data);
             break;
 
-            case DELETE_USER:
-            $usuario -> delete($user_data['email']);
-            $data = array('mensaje' => $usuario->mensaje);
-            retornar_vista(VIEW_DELETE_USER,$data);
+            case DELETE_LOGIN:
+            $login -> delete($user_data['email']);
+            $data = array('mensaje' => $login->mensaje);
+            retornar_vista(VIEW_DELETE_LOGIN,$data);
             break;
 
-            case EDIT_USER:
-            $usuario -> edit ($user_data);
-            $data = array('mensaje' => $usuario -> mensaje);
-            retornar_vista(VIEW_GET_USER,$data);
+            case EDIT_LOGIN:
+            $login -> edit ($user_data);
+            $data = array('mensaje' => $login -> mensaje);
+            retornar_vista(VIEW_GET_LOGIN,$data);
             break;
             default :
             retornar_vista($event);
@@ -59,7 +58,7 @@ function handler(){
     }
 
 function set_obj(){
-	$obj = new Usuario();
+	$obj = new Login();
 	return $obj;
 }
 

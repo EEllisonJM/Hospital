@@ -1,13 +1,13 @@
 <?php
-const MODULO = 'usuarios/';//const MODULO = 'usuario_';
+const MODULO = 'login/';
 # controladores
-const SET_USER = 'set';
-const GET_USER = 'get';
-const DELETE_USER = 'delete';
-const EDIT_USER = 'edit';
+const SET_LOGIN = 'set';
+const GET_LOGIN = 'get';
+const DELETE_LOGIN = 'delete';
+const EDIT_LOGIN = 'edit';
 # vistas
-const VIEW_SET_USER = 'agregar';
-const VIEW_GET_USER = 'buscar';
-const VIEW_DELETE_USER = 'borrar';
-const VIEW_EDIT_USER = 'modificar';
+const VIEW_SET_LOGIN = 'agregar';
+const VIEW_GET_LOGIN = 'buscar';
+const VIEW_DELETE_LOGIN = 'borrar';
+const VIEW_EDIT_LOGIN = 'modificar';
 ?>

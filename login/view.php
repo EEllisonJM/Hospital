@@ -1,24 +1,24 @@
 <?php
 $diccionario = array('subtitle' => array(
-	VIEW_SET_USER => 'Crear un nuevo usuario',
-	VIEW_GET_USER => 'Buscar usuario',
-	VIEW_DELETE_USER => 'Eliminar un usuario',
-	VIEW_EDIT_USER => 'Modificar usuario'),
+	VIEW_SET_LOGIN => 'Crear un nuevo login',
+	VIEW_GET_LOGIN => 'Buscar login',
+	VIEW_DELETE_LOGIN => 'Eliminar un login',
+	VIEW_EDIT_LOGIN => 'Modificar login'),
 
 	'links_menu' => array(
-	'VIEW_SET_USER' => MODULO . VIEW_SET_USER .'/',//'VIEW_SET_USER' => 'site_media/html/' . MODULO . VIEW_SET_USER .'.html',//
-	'VIEW_GET_USER' => MODULO . VIEW_GET_USER .'/',
-	'VIEW_EDIT_USER' => MODULO . VIEW_EDIT_USER .'/',
-	'VIEW_DELETE_USER' => MODULO . VIEW_DELETE_USER .'/'),
+	'VIEW_SET_LOGIN' => MODULO . VIEW_SET_LOGIN .'/',//'VIEW_SET_LOGIN' => 'site_media/html/' . MODULO . VIEW_SET_LOGIN .'.html',//
+	'VIEW_GET_LOGIN' => MODULO . VIEW_GET_LOGIN .'/',
+	'VIEW_EDIT_LOGIN' => MODULO . VIEW_EDIT_LOGIN .'/',
+	'VIEW_DELETE_LOGIN' => MODULO . VIEW_DELETE_LOGIN .'/'),
 
 'form_actions' => array(
-	'SET' => '/Hospital/mvc/' . MODULO . SET_USER .'/',//MODULO = 'usuarios/';
-	'GET' =>'/Hospital/mvc/' . MODULO . GET_USER .'/',//SET_USER = 'set';
-	'DELETE' => '/Hospital/mvc/' . MODULO . DELETE_USER .'/',
-	'EDIT' => '/Hospital/mvc/' . MODULO . EDIT_USER .'/'));
+	'SET' => '/PW/Hospital/' . MODULO . SET_LOGIN .'/',//MODULO = 'logins/';
+	'GET' =>'/PW/Hospital/' . MODULO . GET_LOGIN .'/',//SET_LOGIN = 'set';
+	'DELETE' => '/PW/Hospital/' . MODULO . DELETE_LOGIN .'/',
+	'EDIT' => '/PW/Hospital/' . MODULO . EDIT_LOGIN .'/'));
 
 function get_template($form = 'get'){
-	$file = '../site_media/html/usuario_' . $form .'.html';
+	$file = '../site_media/html/login_' . $form .'.html';
 	$template = file_get_contents($file);
 	return $template;
 }
@@ -40,13 +40,13 @@ function retornar_vista($vista,$data = array()){//set,
 	// render {mensaje}
 	if(array_key_exists('nombre',$data) &&
 		array_key_exists('apellido',$data) &&
-		$vista==VIEW_EDIT_USER){
-		$mensaje = 'Editar usuario ' . $data ['nombre'] . ' ' . $data ['apellido'];
+		$vista==VIEW_EDIT_LOGIN){
+		$mensaje = 'Editar login ' . $data ['nombre'] . ' ' . $data ['apellido'];
 	}else{
 		if(array_key_exists('mensaje',$data)){
 			$mensaje = $data['mensaje'];
 		}else{
-			$mensaje = 'Datos del usuario:';
+			$mensaje = 'Datos del login:';
 		}
 	}
 	$html = str_replace('{mensaje}',$mensaje,$html);
