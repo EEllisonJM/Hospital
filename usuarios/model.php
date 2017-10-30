@@ -55,7 +55,7 @@ class Usuario extends DBAbstractModel {
     }
     $this->query ="
     UPDATE usuarios
-    SET nombre='$nombre', apellido='$apellido',  clave='$clave'
+    SET nombre='$nombre', apellido='$apellido
     WHERE email = '$email'";
     $this->execute_single_query();
     $this->mensaje = 'Usuario modificado';
@@ -70,7 +70,7 @@ class Usuario extends DBAbstractModel {
    }
    # Método constructor
    function __construct(){
-     $this->db_name = 'mydb';
+     $this->db_name = 'my_db';
    }
     # Método destructor del objeto
    /*function __destruct(){
