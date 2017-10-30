@@ -53,7 +53,7 @@ if($_REQUEST['registrar'] == "Registrar")
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Registro Area</title>
+<title>Registro Puesto</title>
 </head>
 
 
@@ -69,7 +69,7 @@ if($_REQUEST['registrar'] == "Registrar")
 
 <form action="<?=$_SERVER['PHP_SELF'];?>" name="registro" method="post" enctype="multipart/form-data">
   <fieldset> 
-<legend  style="font-size: 20pt"><b>Registro Area</b></legend>
+<legend  style="font-size: 20pt"><b>Registro Puesto</b></legend>
 
 
  <div class="item_requerid">TIPO DE EMPLEADO</div>
