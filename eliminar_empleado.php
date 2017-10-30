@@ -16,7 +16,7 @@ include("configuracion.php");
       ?>
         <script language="javascript">
 		alert("Eliminado Correctamente");
-		window.location='../hospital/mostrar_empleado.php';
+		window.location='mostrar_empleado.php';
 		</script>
       <?php			
      }
