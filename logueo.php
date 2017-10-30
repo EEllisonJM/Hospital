@@ -19,7 +19,7 @@ include("configuracion.php"); //conexion de base de datos
 <input type="text" name="user" value="" /><br />
 
 <label>Contraseña</label>
-<input type="text" name="pass" /> <br />
+<input type="password" name="pass" /> <br />
 
 <input type="submit" name="ingresar" value="Ingresar">
 </form>
