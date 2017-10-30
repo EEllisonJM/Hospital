@@ -1,0 +1,82 @@
+CREATE DATABASE P3Hospital;
+
+/*Debe ser en este orden ya que Usuario tiene una FK a Empleado y empleado depende de la existencia de Puesto*/
+
+create table puesto(
+    idpuesto INT NOT NULL AUTO_INCREMENT,
+    tipoempleado VARCHAR(50) NOT NULL,
+    sueldo INT NOT NULL,
+    visible boolean default true,
+    PRIMARY KEY(idpuesto)
+);
+ALTER TABLE puesto AUTO_INCREMENT=7001;
+
+CREATE TABLE Empleado (
+    idEmpleado int not null AUTO_INCREMENT,
+    idpuesto int references puesto(idpuesto),
+    apellidoP varchar (60) ,
+    apellidoM varchar (60) ,
+    nombre varchar(60) ,
+    sexo varchar(1) ,   
+    fecha_nacimiento date,
+    telefono varchar(10),
+    calle varchar(60) ,
+    colonia varchar(60) ,
+    codigo_postal varchar(60) ,
+    ciudad varchar(60) ,
+    e_mail varchar(60) not null,
+    visible boolean default true,
+    PRIMARY KEY(idEmpleado)
+);
+ALTER TABLE Empleado AUTO_INCREMENT=101;
+
+CREATE TABLE Usuario(
+    idUsuario int not null AUTO_INCREMENT,
+userName varchar(16) not null unique,
+    password varchar(16),
+    flag boolean default true,
+    idEmpleado int references Empleado(idEmpleado),
+    PRIMARY KEY(idUsuario)
+);
+ALTER TABLE Usuario AUTO_INCREMENT= 1;
+
+create table area (
+    id_area int  NOT NULL AUTO_INCREMENT,
+    nombre varchar(60) NOT NULL,
+    descripcion varchar(80) NOT NULL,
+    visible boolean default true,
+    PRIMARY KEY(id_area)
+);
+ALTER TABLE area AUTO_INCREMENT=501;
+
+create table RecursosHumanos(
+    idEmpleado int references Empleado(idEmpleado),
+    idArea int references Area(idArea),
+    horaEntrada time,
+    horaSalida time,
+    bonificacion float,
+    visible boolean default true,
+    unique (idEmpleado)
+);
+/*bonificación es un porcentaje*/
+/*El sueldo final al ser un atributo derivado será una consulta*/
+
+
+create table asistencia (
+    idAsistencia int AUTO_INCREMENT,
+    idEmpleado int not null references Empleado(idEmpleado),
+    fecha date,
+    horaEntra time,
+    horaSale time,
+    PRIMARY KEY(idAsistencia)
+);
+
+create table farmacia(
+    idproducto INT NOT NULL AUTO_INCREMENT,
+    nomproducto VARCHAR(60) NOT NULL,
+    tipoproducto VARCHAR(60) NOT NULL,
+    existencia INT NULL,
+    precio float NOT NULL,
+    visible boolean default true,
+    PRIMARY KEY(idproducto)
+);
