@@ -7,40 +7,27 @@ include("../configuraciondb.php"); //conexion de base de datos
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> 
-<style type="text/css">
-        hr  {
-            border:10px solid #000;
-            border-color: #A7DBD8;
-        }
-        h1 {
-          color: #5bc0de;
-          font-family: Times;
-        }
 
-          .centrado{
-    text-align:center;
-  }
-</style>
-
+<link rel="stylesheet" type="text/css" href="/Hospital/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/miCSS.css">
 </head>
 
 <body>
-<nav class="navbar navbar-inverse">
-
-   <ul class="nav navbar-nav navbar-left">
-      <li><a href="../nosotros.php"><span class="glyphicon"></span> Nosotros </a></li>
+  <nav class="navbar navbar-inverse">
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="/Hospital/nosotros.php"><span class="glyphicon glyphicon-globe"></span> Nosotros </a></li>
       <a class="navbar-brand">|</a>
-      <li><a href="../contactos.php"><span class="glyphicon"></span> Contactos  </a></li>
+
+      <li><a href="/Hospital/contactos.php"><span class="glyphicon glyphicon-phone-alt"></span> Contactos  </a></li>
       <a class="navbar-brand">   </a>
       <a class="navbar-brand">|</a>
-        <li><a href="../index.php"><span class="glyphicon glyphicon-home"></span> Inicio  </a></li>
-      <a class="navbar-brand">   </a>
 
-  </ul>  
+      <li><a href="/Hospital/index.php"><span class="glyphicon glyphicon-home"></span> Inicio  </a></li>
+      <a class="navbar-brand"></a>
+  </ul>
 
   <ul class="nav navbar-nav navbar-right">
-      <li><a href="logueo.php"><span class="glyphicon glyphicon-user"></span> Iniciar sesion</a></li>
+      <li><a href="../ses/logueo.php"><span class="glyphicon glyphicon-user"></span> Iniciar sesion</a></li>
   </ul>
 </nav >
 
@@ -48,11 +35,11 @@ include("../configuraciondb.php"); //conexion de base de datos
 
 <center >
   <center><div class="tit"><h2 style="color: #0000FF; ">Inicio de sesión</h2>
-    
+
 <form action="login.php" name="entrada_sistema" method="post" enctype="multipart/form-data">
 
 <center><table border="0">
-<tr><td><label ><b>Usuario</b></label></td> 
+<tr><td><label ><b>Usuario</b></label></td>
 <td width=80> <input type="text" name="user" value="" placeholder="Usuario" /> </td></tr>
 
 <tr><td><label><b>Contraseña</b></label></td>
