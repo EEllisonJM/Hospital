@@ -15,14 +15,14 @@ include("../configuraciondb.php"); //conexion de base de datos
 <body>
   <nav class="navbar navbar-inverse">
     <ul class="nav navbar-nav navbar-left">
-      <li><a href="/Hospital/nosotros.php"><span class="glyphicon glyphicon-globe"></span> Nosotros </a></li>
+      <li><a href="../nosotros.php"><span class="glyphicon glyphicon-globe"></span> Nosotros </a></li>
       <a class="navbar-brand">|</a>
 
-      <li><a href="/Hospital/contactos.php"><span class="glyphicon glyphicon-phone-alt"></span> Contactos  </a></li>
+      <li><a href="../contactos.php"><span class="glyphicon glyphicon-phone-alt"></span> Contactos  </a></li>
       <a class="navbar-brand">   </a>
       <a class="navbar-brand">|</a>
 
-      <li><a href="/Hospital/index.php"><span class="glyphicon glyphicon-home"></span> Inicio  </a></li>
+      <li><a href="../index.php"><span class="glyphicon glyphicon-home"></span> Inicio  </a></li>
       <a class="navbar-brand"></a>
   </ul>
 
