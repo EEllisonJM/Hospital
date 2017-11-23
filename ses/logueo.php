@@ -43,7 +43,7 @@ include("../configuraciondb.php"); //conexion de base de datos
 <td width=80> <input type="text" name="user" value="" placeholder="Usuario" /> </td></tr>
 
 <tr><td><label><b>Contraseña</b></label></td>
-<td witdh=80><input type="text" name="pass" placeholder="Contraseña"  /> </td></tr>
+<td witdh=80><input type="password" name="pass" placeholder="Contraseña"  /> </td></tr>
 
 <tr><td></td>
 
