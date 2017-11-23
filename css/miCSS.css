@@ -12,7 +12,10 @@ width: 50%;
 margin: auto;
 overflow: hidden;
 }
+.static ul{  
+  width: 100%;
 
+}
 .slider ul{
 display: flex;
 padding: 0;

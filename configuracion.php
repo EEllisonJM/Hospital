@@ -1,13 +1,7 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
   <link rel="dns-prefetch" href="https://assets-cdn.github.com">
   <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
   <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
@@ -16,23 +10,17 @@
   <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
   <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
 
-
-
   <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-d7137690e30123bade38abb082ac79f36cc7a105ff92e602405f53b725465cab.css" integrity="sha256-1xN2kOMBI7reOKuwgqx582zHoQX/kuYCQF9TtyVGXKs=" media="all" rel="stylesheet" />
   <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-eb34444ab70f6147b27f5325cf33d0325161397dd07d7ceddd2b7a0979b91205.css" integrity="sha256-6zRESrcPYUeyf1MlzzPQMlFhOX3QfXzt3St6CXm5EgU=" media="all" rel="stylesheet" />
-  
-  
-  
-  
 
   <meta name="viewport" content="width=device-width">
-  
+
   <title>Hospital/configuracion.php at Mostrar · EEllisonJM/Hospital</title>
   <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
   <meta property="fb:app_id" content="1401488693436528">
 
-    
+
     <meta content="https://avatars2.githubusercontent.com/u/26390587?s=400&amp;v=4" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="EEllisonJM/Hospital" property="og:title" /><meta content="https://github.com/EEllisonJM/Hospital" property="og:url" /><meta content="Hospital - Programación web - Proyecto 3" property="og:description" />
 
   <link rel="assets" href="https://assets-cdn.github.com/">
@@ -40,7 +28,7 @@
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
   <meta name="request-id" content="C9E1:4193:A33613:1427368:59F32444" data-pjax-transient>
-  
+
 
   <meta name="selected-link" value="repo_source" data-pjax-transient>
 
@@ -57,7 +45,7 @@
   <meta class="js-ga-set" name="dimension1" content="Logged In">
 
 
-  
+
 
       <meta name="hostname" content="github.com">
   <meta name="user-login" content="GarciaGarciaGuillermoRicardo">
@@ -70,7 +58,7 @@
   <meta name="html-safe-nonce" content="9a88013dc873f9e22929e201a49cdec5639e20fa">
 
   <meta http-equiv="x-pjax-version" content="5e3e6e73863229649d2baec8b5b31c43">
-  
+
 
       <link href="https://github.com/EEllisonJM/Hospital/commits/Mostrar.atom" rel="alternate" title="Recent Commits to Hospital:Mostrar" type="application/atom+xml">
 
@@ -100,19 +88,19 @@
   </head>
 
   <body class="logged-in env-production page-blob">
-    
+
 
   <div class="position-relative js-header-wrapper ">
     <a href="#start-of-content" tabindex="1" class="bg-black text-white p-3 show-on-focus js-skip-to-content">Skip to content</a>
     <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
 
-    
-    
-    
 
 
 
-        
+
+
+
+
 <header class="Header  f5" role="banner">
   <div class="d-flex px-3 flex-justify-between container-lg">
     <div class="d-flex flex-justify-between">
@@ -167,11 +155,11 @@
       </div>
 
       <div class="d-flex">
-        
+
 <ul class="user-nav d-flex flex-items-center list-style-none" id="user-links">
   <li class="dropdown js-menu-container js-header-notifications">
     <span class="d-inline-block  px-2">
-      
+
 
     </span>
   </li>
@@ -186,7 +174,7 @@
       </summary>
 
       <ul class="dropdown-menu dropdown-menu-sw">
-        
+
 <a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
   New repository
 </a>
@@ -273,7 +261,7 @@
 </header>
 
 
-      
+
 
   </div>
 
@@ -287,7 +275,7 @@
   <div role="main">
         <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
     <div id="js-repo-pjax-container" data-pjax-container>
-      
+
 
 
 
@@ -376,7 +364,7 @@
   </li>
 
   <li>
-    
+
   <div class="js-toggler-container js-social-container starring-container ">
     <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/EEllisonJM/Hospital/unstar" class="starred js-social-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="VKkgcmrlAM9OWvIjU6zVj4/CMQm2GokQ0h+leTN/SkaqksD8xtgwOyVu8N3ARlZnX/pai1yKcfBq35djjLK5TQ==" /></div>
       <input type="hidden" name="context" value="repository"></input>
@@ -439,7 +427,7 @@
 </h1>
 
       </div>
-      
+
 <nav class="reponav js-repo-nav js-sidenav-container-pjax container"
      itemscope
      itemtype="http://schema.org/BreadcrumbList"
@@ -492,16 +480,16 @@
 <div class="container new-discussion-timeline experiment-repo-nav">
   <div class="repository-content">
 
-    
+
   <a href="/EEllisonJM/Hospital/blob/917f6f99fc4c209f9343291646c940ce30384a83/configuracion.php" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
 
   <!-- blob contrib key: blob_contributors:v21:1f807f655f43197efae83628f03fa68c -->
 
   <div class="file-navigation js-zeroclipboard-container">
-    
+
 <div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
   <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
-    
+
     type="button" aria-label="Switch branches or tags" aria-expanded="false" aria-haspopup="true">
       <i>Branch:</i>
       <span class="js-select-button css-truncate-target">Mostrar</span>
@@ -645,7 +633,7 @@
   </div>
 </div>
 
-    
+
 
   <div itemprop="text" class="blob-wrapper data type-php">
       <table class="highlight tab-size js-file-line-container" data-tab-size="8">
@@ -723,7 +711,7 @@
 
   </div>
 
-      
+
 <div class="footer container-lg px-3" role="contentinfo">
   <div class="position-relative d-flex flex-justify-between py-6 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap ">
@@ -761,14 +749,14 @@
   </div>
 
 
-    
+
     <script crossorigin="anonymous" integrity="sha256-kO4IRl30AFXbobbN8akpieAMTwfYBby7HBg788ye2vQ=" src="https://assets-cdn.github.com/assets/frameworks-90ee08465df40055dba1b6cdf1a92989e00c4f07d805bcbb1c183bf3cc9edaf4.js"></script>
-    
+
     <script async="async" crossorigin="anonymous" integrity="sha256-cODKarAI4VUXyc1oW656HqVzNM+R8y6KAErWhkGn1Jo=" src="https://assets-cdn.github.com/assets/github-70e0ca6ab008e15517c9cd685bae7a1ea57334cf91f32e8a004ad68641a7d49a.js"></script>
-    
-    
-    
-    
+
+
+
+
   <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
     <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
     <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
@@ -787,4 +775,3 @@
 
   </body>
 </html>
-

@@ -1,46 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="es-ES">
-
 <head>
   <meta charset="UTF-8">
   <title>Hospital</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> 
-<style type="text/css">
-        hr  {
-            border:10px solid #000;
-            border-color: #A7DBD8;
-        }
-        h1 {
-          color: #5bc0de;
-          font-family: Times;
-        }
-
-
-</style>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/miCSS.css">
 </head>
 
+  <body>
+    <nav class="navbar navbar-inverse">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="nosotros.php"><span class="glyphicon glyphicon-globe"></span> Nosotros </a></li>
+        <a class="navbar-brand">|</a>
 
-<body>
+        <li><a href="contactos.php"><span class="glyphicon glyphicon-phone-alt"></span> Contactos  </a></li>
+        <a class="navbar-brand">   </a>
+        <a class="navbar-brand">|</a>
 
-
-<nav class="navbar navbar-inverse">
-
-   <ul class="nav navbar-nav navbar-left">
-      <li><a href="nosotros.php"><span class="glyphicon"></span> Nosotros </a></li>
-      <a class="navbar-brand">|</a>
-      <li><a href="contactos.php"><span class="glyphicon"></span> Contactos  </a></li>
-      <a class="navbar-brand">   </a>
-      <a class="navbar-brand">|</a>
         <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Inicio  </a></li>
-      <a class="navbar-brand">   </a>
+        <a class="navbar-brand"></a>
+    </ul>
 
-  </ul>  
-
-  <ul class="nav navbar-nav navbar-right">
-      <li><a href="../Hospital/ses/logueo.php"><span class="glyphicon glyphicon-user"></span> Iniciar sesion</a></li>
-  </ul>
-</nav >
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="../Hospital/ses/logueo.php"><span class="glyphicon glyphicon-user"></span> Iniciar sesion</a></li>
+    </ul>
+  </nav >
 
 
 <div class="page-header text-center">
@@ -54,7 +38,7 @@
   Ciudad, Provincia 00000<br>
   <abbr title="Phone">Tel:</abbr> 9XX 123 456
 </address>
- 
+
 <address>
   <strong>Nombre Apellido</strong><br>
   <a href="mailto:#">nombre.apellido@ejemplo.com</a>
