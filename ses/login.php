@@ -2,8 +2,6 @@
 session_start();
 ob_start();
 include("../configuraciondb.php");
-
-  $username=$_POST['user'];
   
   //if(isset($_REQUEST['Ingresar']))
   //{
@@ -19,36 +17,34 @@ include("../configuraciondb.php");
   //}
        else 
        {
-            //$pass = md5($_POST["password"]);
-
-            $r = mysqli_query($conexion,"select * from usuario WHERE nombreusuario='".$_REQUEST["user"]."' and password='".$_REQUEST["pass"]."'");
-      //consulta para validar usuario y contraseña ingresados en la base de datos         
+            $r = mysqli_query($conexion,"SELECT idUsuario, idEmpleado, idpuesto, userName, password, tipoempleado FROM usuario NATURAL JOIN empleado NATURAL JOIN puesto WHERE userName='".$_REQUEST["user"]."'
+			                  and password='".$_REQUEST["pass"]."'");
             $r2 = mysqli_fetch_array($r);
-      // instruccion para poder visualizar los registros en la base de datos segun corresponda
-          $r1 = mysqli_num_rows($r);
-      // instruccion para mostrar cantidad de registros mostrados de la consulta
-
-          $usuario=$_SESSION["usuario"];
+			
+	        $r1 = mysqli_num_rows($r);
 
             if($r1 == 1) //comparacion donde tiene que mostrar solo 1 registro (usuario nunca se debe de repetir)
             {
-                 $_SESSION["usuario"] = $r2["usuario"]; // declaracion de la variable de sesion usuario
-               $_SESSION["tipo"] = $r2["tipo"]; // declaracion de la variable de sesion tipo de usuario
-               ?>
-                   <script language="javascript">
-                   alert("Te haz logueado satisfactoriamente");
-                   window.location="../administrador/admin.php";
-                   </script>
-               <?php
-            }
-             else
+				$_SESSION["usuario"] = $r2["userName"]; // declaracion de la variable de sesion usuario
+				$_SESSION["tipo"] = $r2["tipoempleado"]; // declaracion de la variable de sesion tipo de usuario
+				//Te refirige a la vista
+				if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["tipo"]=="JEFE DE AREA"||$_SESSION["tipo"]=="ENCARGADO DE FARMACIA"||$_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS"){
+					?>
+					<script language="javascript">
+					alert("Te haz logueado satisfactoriamente");
+					window.location="../vistas/admin.php";
+					</script>
+					<?php
+				}
+       	    }
+			else
             {
-          ?>
+			?>
                  <script language="javascript">
                  alert("Error, Escriba correctamente su Usuario y/o Password");
                  window.location="logueo.php";
                  </script> 
-          <?php
+			<?php
             }
       }
 ?>
