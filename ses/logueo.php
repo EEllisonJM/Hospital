@@ -8,7 +8,7 @@ include("../configuraciondb.php"); //conexion de base de datos
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<link rel="stylesheet" type="text/css" href="/Hospital/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/miCSS.css">
 </head>
 
