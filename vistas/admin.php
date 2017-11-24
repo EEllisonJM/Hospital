@@ -162,7 +162,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
               </ul></li>
             <li><a href="">Mostrar Todos Los Medicamentos</a>
               <ul>
-               <li><a href="">Por precio</a></li>
+               <li><a target="_blank" href="../pdf/reportes/precio.php">Por precio</a></li>
               <li><a href="">Port tipo</a></li> 
               </ul></li>
           </ul>
