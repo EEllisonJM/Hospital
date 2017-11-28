@@ -2,14 +2,10 @@
 <?php
 require_once('../lib/pdf/mpdf.php');
 include ("configuraciondb.php");
-if($_REQUEST['todo'] == "Todos") {
+if($_REQUEST['producto'] == "TODAS") {
 $query = "SELECT * FROM farmacia WHERE visible=1";
 }else{
-if($_REQUEST["menor"] < $_REQUEST["mayor"]){
-$query = "SELECT * FROM farmacia WHERE visible=1 AND precio BETWEEN '".$_REQUEST["menor"]."' AND '".$_REQUEST["mayor"]."'";
-}else{
-  $query = "SELECT * FROM farmacia WHERE visible=1 AND precio BETWEEN '".$_REQUEST["mayor"]."' AND '".$_REQUEST["menor"]."'";
-}
+$query = "SELECT * FROM farmacia WHERE visible=1 AND tipoproducto='".$_REQUEST["producto"]."'";
 }
 $prepare = $conexion->prepare($query);
 $prepare->execute();
