@@ -134,7 +134,7 @@ if($_REQUEST['registrar'] == "Registrar")
 <nav class="navbar navbar-inverse">
 
    <ul class="nav navbar-nav navbar-left">
-      <a class="navbar-brand"><span class="glyphicon glyphicon-user"></span>  Administrador </a>
+      <a class="navbar-brand"><span class="glyphicon glyphicon-user"></span><?php echo ' '.$_SESSION["tipo"],': '.$_SESSION["usuario"]; ?></a>
   </ul>  
 
   <ul class="nav navbar-nav navbar-right">
