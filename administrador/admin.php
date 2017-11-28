@@ -4,68 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Hospital</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> 
-<style type="text/css">
-        hr  {
-            border:11px solid #000;
-            border-color: #A7DBD8;
-        }
-        h1 {
-          color: #5bc0de;
-          font-family: Times;
-        }
-* {
-        margin:0px;
-        padding:0px;
-      }
-
-      #header {
-        margin:auto;
-        width:1100px;
-        font-family:Arial, Helvetica, sans-serif;
-      }
-      
-      ul, ol {
-        list-style:none;
-      }
-      
-      .nav > li {
-        float:left;
-
-      }
-      
-      .nav li a {
-        background-color:#000;
-        color:#fff;
-        text-decoration:none;
-        padding:12px 40px;
-        display:block;
-      }
-      
-      .nav li a:hover {
-        background-color:#434343;
-      }
-      
-      .nav li ul {
-        display:none;
-        position:absolute;
-        min-width:150px;
-      }
-      
-      .nav li:hover > ul {
-        display:block;
-      }
-      
-      .nav li ul li {
-        position:relative;
-      }
-      
-      .nav li ul li ul {
-        right:-150px;
-        top:0px;
-      }
-
-</style>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/miCSS.css">
+<link rel="stylesheet" href="estilo_admin.css">
 </head>
 
 
@@ -86,7 +27,7 @@
       <ul class="nav">
         <li><a href="">Usuario</a>
           <ul>
-            <li><a href="">Alta</a></li>
+            <li><a href="agregar_usuario.php">Alta</a></li>
             <li><a href="">Baja</a></li>
             <li><a href="">Editar</a></li>
           </ul>
@@ -94,7 +35,7 @@
 
         <li><a href="">Empleado</a>
           <ul>
-            <li><a href="">Alta</a></li>
+            <li><a href="agregar_empleado.php">Alta</a></li>
             <li><a href="">Baja</a></li>
             <li><a href="">Editar</a></li>
           </ul>
@@ -110,7 +51,7 @@
 
          <li><a href="">Farmacia</a>
           <ul>
-            <li><a href="">Alta</a></li>
+            <li><a href="agregar_producto.php">Alta</a></li>
             <li><a href="">Baja</a></li>
             <li><a href="">Editar</a></li>
           </ul>
@@ -120,11 +61,13 @@
           <ul>
             <li><a href="">Asignar Area</a>
               <ul>
+                <li><a href="">Alta</a></li>
                <li><a href="">Editar</a></li>
                <li><a href="">Baja</a></li>
               </ul></li>
             <li><a href="">Asignar sueldo</a>
               <ul>
+              <li><a href="">Alta</a></li>
                <li><a href="">Editar</a></li>
                <li><a href="">Baja</a></li>  
               </ul></li>
@@ -141,8 +84,8 @@
               </ul></li>
             <li><a href="">Mostrar Todos Los Medicamentos</a>
               <ul>
-               <li><a href="">Por precio</a></li>
-              <li><a href="">Port tipo</a></li> 
+               <li><a href="/Hospital/pdf/reportes/interfaz_precio.php">Por precio</a></li>
+              <li><a href="/Hospital/pdf/reportes/interfaz_tipo.php">Por tipo</a></li> 
               </ul></li>
           </ul>
         </li>
