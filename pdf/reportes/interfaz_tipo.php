@@ -1,7 +1,12 @@
 <?php
+session_start();
+ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("configuraciondb.php"); //conexion de base de datos
 $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoproducto FROM farmacia WHERE visible=1");
+if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["tipo"]=="JEFE DE AREA"||$_SESSION["tipo"]=="ENCARGADO DE FARMACIA"||$_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS")
+{
+  
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -17,7 +22,7 @@ $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoproducto FROM farmacia WH
 <nav class="navbar navbar-inverse">
 
    <ul class="nav navbar-nav navbar-left">
-      <a class="navbar-brand"><span class="glyphicon glyphicon-user"></span>  Administrador </a>
+      <a class="navbar-brand"><span class="glyphicon glyphicon-user"></span><?php echo ' '.$_SESSION["tipo"],': '.$_SESSION["usuario"]; ?></a>
   </ul>  
 
   <ul class="nav navbar-nav navbar-right">
@@ -89,7 +94,7 @@ $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoproducto FROM farmacia WH
               </ul></li>
             <li><a href="">Mostrar Todos Los Medicamentos</a>
               <ul>
-               <li><a href="/Hospital/pdf/reportes/tipo.php" target="confirma" onSubmit="confirma = window.open('','Confirma Mensaje, 'width=300 height=200, status=no scrollbars=no, location=no, resizable=no, manu=no');">Por precio</a></li>
+               <li><a href="">Por precio</a></li>
               <li><a href="">Port tipo</a></li> 
               </ul></li>
           </ul>
@@ -125,3 +130,19 @@ $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoproducto FROM farmacia WH
 
 </body>
 </html>
+
+
+<?php 
+
+}
+// cuando no este logueado (iniciado sesion) mostrara la siguiente alerta de acceso denegado y redireccionara al login de inicio de sesion
+else
+  {
+?>
+    <script>
+        alert("Acceso Denegado");
+        window.location = "../ses/logueo.php";
+    </script>
+<?php
+  }
+?>

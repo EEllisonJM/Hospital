@@ -32,7 +32,7 @@ include("../configuraciondb.php");
 					?>
 					<script language="javascript">
 					alert("Te haz logueado satisfactoriamente");
-					window.location="../vistas/admin.php";
+					window.location="../administrador/admin.php";
 					</script>
 					<?php
 				}
