@@ -3,6 +3,7 @@ session_start();
 ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("../configuraciondb.php"); //conexion de base de datos
+include("menu.php");
 $consulta=mysqli_query($conexion, "SELECT * FROM empleado WHERE visible=1");
 if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["tipo"]=="JEFE DE AREA"||$_SESSION["tipo"]=="ENCARGADO DE FARMACIA"||$_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS")
 {
@@ -52,89 +53,8 @@ if($check_nom>0){
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
 
-   <ul class="nav navbar-nav navbar-left">
-      <a class="navbar-brand"><span class="glyphicon glyphicon-user"></span><?php echo ' '.$_SESSION["tipo"],': '.$_SESSION["usuario"]; ?></a>
-  </ul>  
 
-  <ul class="nav navbar-nav navbar-right">
-      <li><a href="../index.php"><span class="glyphicon glyphicon-ban-circle"></span> Cerrar sesion</a></li>
-  </ul>
-</nav >
-
-<br>
-<br>
-<div id="header">
-      <ul class="nav">
-        <li><a href="">Usuario</a>
-          <ul>
-            <li><a href="agregar_usuario.php">Alta</a></li>
-            <li><a href="">Baja</a></li>
-            <li><a href="">Editar</a></li>
-          </ul>
-        </li>
-
-        <li><a href="">Empleado</a>
-          <ul>
-            <li><a href="agregar_empleado.php">Alta</a></li>
-            <li><a href="">Baja</a></li>
-            <li><a href="">Editar</a></li>
-          </ul>
-        </li>
-
-         <li><a href="">Area</a>
-          <ul>
-            <li><a href="area_agregar.php">Alta</a></li>
-            <li><a href="">Baja</a></li>
-            <li><a href="">Editar</a></li>
-          </ul>
-        </li>
-
-         <li><a href="">Farmacia</a>
-          <ul>
-            <li><a href="agregar_producto.php">Alta</a></li>
-            <li><a href="">Baja</a></li>
-            <li><a href="">Editar</a></li>
-          </ul>
-        </li>
-
-         <li><a href="">Recursos Humanos</a>
-          <ul>
-            <li><a href="">Asignar Area</a>
-              <ul>
-                <li><a href="">Alta</a></li>
-               <li><a href="">Editar</a></li>
-               <li><a href="">Baja</a></li>
-              </ul></li>
-            <li><a href="">Asignar sueldo</a>
-              <ul>
-                <li><a href="">Alta</a></li>
-               <li><a href="">Editar</a></li>
-               <li><a href="">Baja</a></li>  
-              </ul></li>
-          </ul>
-        </li>
-
-           <li><a href="">Reportes</a>
-          <ul>
-            <li><a href="">Mostrar Nomina Total</a>
-              <ul>
-              <li><a href="">Por Area</a></li>
-              <li><a href="">Por Sueldo</a></li>
-              <li><a href="">Asistencia</a></li>  
-              </ul></li>
-            <li><a href="">Mostrar Todos Los Medicamentos</a>
-              <ul>
-                <li><a href="/PW//Hospital/pdf/reportes/interfaz_precio.php">Por precio</a></li>
-              <li><a href="/PW/Hospital/pdf/reportes/interfaz_tipo.php">Por tipo</a></li> 
-              </ul></li>
-          </ul>
-        </li>
-
-      </ul>
-    </div>
- 
 <div class='centrar'>
   
     <div class="container-fluid text-center">    
