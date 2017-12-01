@@ -1,13 +1,3 @@
-<?php
-session_start();
-ob_start();
-error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
-include("../configuraciondb.php"); //conexion de base de datos
-
-if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["tipo"]=="JEFE DE AREA"||$_SESSION["tipo"]=="ENCARGADO DE FARMACIA"||$_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS")
-{
-  
-?>
 <!DOCTYPE html>
 <html lang="es-ES">
 
@@ -15,7 +5,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
   <meta charset="UTF-8">
   <title>Hospital</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> 
-<link rel="stylesheet" href="estilo_admin.css">
+<link rel="stylesheet" href="/PW/Hospital/administrador/estilo_admin.css">
 </head>
 
 
@@ -28,7 +18,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
   </ul>  
 
   <ul class="nav navbar-nav navbar-right">
-      <li><a href="../ses/logout.php"><span class="glyphicon glyphicon-ban-circle"></span> Cerrar sesion</a></li>
+      <li><a href="/PW/Hospital/ses/logout.php"><span class="glyphicon glyphicon-ban-circle"></span> Cerrar sesion</a></li>
   </ul>
 </nav >
 
@@ -37,7 +27,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
 		<?php if($_SESSION["tipo"]=="ADMINISTRADOR"){ ?>
         <li><a href="">Usuario</a>
           <ul>
-            <li><a href="agregar_usuario.php">Alta</a></li>
+            <li><a href="/PW/Hospital/administrador/agregar_usuario.php">Alta</a></li>
             <li><a href="">Baja</a></li>
             <li><a href="">Editar</a></li>
           </ul>
@@ -48,7 +38,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
 		if($_SESSION["tipo"]=="GERENTE"||$_SESSION["tipo"]=="ADMINISTRADOR"){?>
         <li><a href="">Empleado</a>
           <ul>
-            <li><a href="agregar_empleado.php">Alta</a></li>
+            <li><a href="/PW/Hospital/administrador/agregar_empleado.php">Alta</a></li>
             <li><a href="">Baja</a></li>
             <li><a href="">Editar</a></li>
           </ul>
@@ -58,8 +48,8 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
 		if($_SESSION["tipo"]=="JEFE DE AREA"||$_SESSION["tipo"]=="ADMINISTRADOR"){?>
          <li><a href="">Area</a>
           <ul>
-            <li><a href="area_agregar.php">Alta</a></li>
-            <li><a href="mostrar_area.php">Baja</a></li>
+            <li><a href="/PW/Hospital/administrador/area_agregar.php">Alta</a></li>
+            <li><a href="/PW/Hospital/administrador/mostrar_area.php">Baja</a></li>
             <li><a href="">Editar</a></li>
           </ul>
         </li>
@@ -68,7 +58,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
 		if($_SESSION["tipo"]=="ENCARGADO DE FARMACIA"||$_SESSION["tipo"]=="ADMINISTRADOR"){?>
          <li><a href="">Farmacia</a>
           <ul>
-            <li><a href="agregar_producto.php">Alta</a></li>
+            <li><a href="/PW/Hospital/administrador/agregar_producto.php">Alta</a></li>
             <li><a href="">Baja</a></li>
             <li><a href="">Editar</a></li>
           </ul>
@@ -115,19 +105,3 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
 </body>
 
 </html>
-
-
-<?php 
-
-}
-// cuando no este logueado (iniciado sesion) mostrara la siguiente alerta de acceso denegado y redireccionara al login de inicio de sesion
-else
-  {
-?>
-    <script>
-        alert("Acceso Denegado");
-        window.location = "../ses/logueo.php";
-    </script>
-<?php
-  }
-?>
