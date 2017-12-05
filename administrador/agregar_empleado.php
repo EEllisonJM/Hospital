@@ -46,7 +46,7 @@ VALUES ('" . $_REQUEST["puesto"] . "','" . $_REQUEST["apellidop"] . "','" . $_RE
                      onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="50" required>
             </td>
             <td>
-              <label>Apelido Paterno
+              <label>Apelido Materno
               </label>
             </td>
             <td>
