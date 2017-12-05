@@ -39,8 +39,8 @@
         <li><a href="">Empleado</a>
           <ul>
             <li><a href="/PW/Hospital/administrador/agregar_empleado.php">Alta</a></li>
-            <li><a href="">Baja</a></li>
-            <li><a href="">Editar</a></li>
+            <li><a href="/PW/Hospital/administrador/eliminar_empleado.php">Baja</a></li>
+            <li><a href="/PW/Hospital/administrador/mostrar_empleado.php">Editar</a></li>
           </ul>
         </li>
 		<?php }
