@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"><!-- Permiete representar caracteres de varios paises (tildes, acentos ...) -->
   <title>Hospital</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/miCSS.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/miCSS.css">
 </head>
 
 <body>
