@@ -28,11 +28,9 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
        </script>
        <?php
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="es-ES">
-
 <head>
   <meta charset="UTF-8">
   <title>Hospital</title>

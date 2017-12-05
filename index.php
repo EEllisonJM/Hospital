@@ -1,10 +1,10 @@
-<!DOCTYPE html><!-- Declaración del tipo de documento => Versión de HTML a trabajar => HTML Versión 5-->
+<html><!-- Declaración del tipo de documento => Versión de HTML a trabajar => HTML Versión 5-->
 <html lang="es-ES">
 <head>
   <meta charset="UTF-8"><!-- Permiete representar caracteres de varios paises (tildes, acentos ...) -->
   <title>Hospital</title>
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../css/miCSS.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/miCSS.css">
 </head>
 
 <body>
