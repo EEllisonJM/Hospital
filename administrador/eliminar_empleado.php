@@ -98,7 +98,7 @@
 
         <li><a href="">Empleado</a>
           <ul>
-            <li><a href="">Alta</a></li>
+            <li><a href="agregar_empleado.php">Alta</a></li>
             <li><a href="eliminar_empleado.php">Baja</a></li>
             <li><a href="mostrar_empleado.php">Editar</a></li>
           </ul>
