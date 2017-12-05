@@ -7,7 +7,7 @@ include("menu.php");
 
 if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["tipo"]=="JEFE DE AREA"||$_SESSION["tipo"]=="ENCARGADO DE FARMACIA"||$_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS")
 {
-  if($_REQUEST['registrar'] == "Registrar") 
+  if($_REQUEST['registrar'] == "Registrar")
   //$_REQUEST registrar invoca al name del boton y lo compara con el value del input del boton
 {
   if($_REQUEST["nombre"] == "" or $_REQUEST["descripcion"] == "")
@@ -17,11 +17,10 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
        <script>
                   alert("Rellena los campos, por favor.");
        </script>
-    <?php   
+    <?php
   }
   else
-    
-  $resultado = mysqli_query($conexion,"INSERT INTO area (nombre, descripcion, visible) 
+  $resultado = mysqli_query($conexion,"INSERT INTO area (nombre, descripcion, visible)
   VALUES ('".$_REQUEST["nombre"]."','".$_REQUEST["descripcion"]."', '1')");
  ?>
   <script>
@@ -29,7 +28,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
        </script>
        <?php
 }
-  
+
 ?>
 <!DOCTYPE html>
 <html lang="es-ES">
@@ -37,30 +36,23 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
 <head>
   <meta charset="UTF-8">
   <title>Hospital</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="estilo.css">
-    
 </head>
 <body>
-
-
- 
 <div class='centrar'>
-  
-    <div class="container-fluid text-center">    
+    <div class="container-fluid text-center">
   <div class="row content">
-    <div class="col-sm-8 text-left" align="center"> 
-      <!--Formulario-->    
+    <div class="col-sm-8 text-left" align="center">
+      <!--Formulario-->
       <div class="col-sm-6">
       <form class="form-horizontal" action="<?=$_SERVER['PHP_SELF'];?>" name="registro" method="post" enctype="multipart/form-data">
       <div class="form-group">
         <label>Nombre</label><br>
-        <input type="text" class="col-md-6" name="nombre" pattern="[A-Za-z ]+" style="text-transform:uppercase;" 
+        <input type="text" class="col-md-6" name="nombre" pattern="[A-Za-z ]+" style="text-transform:uppercase;"
         onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="60" placeholder="Nombre">
       </div>
       <div class="form-group">
         <label>Descripcion</label><br>
-        <input type="text" class="col-md-6" name="descripcion" pattern="[A-Za-z ]+" style="text-transform:uppercase;" 
+        <input type="text" class="col-md-6" name="descripcion" pattern="[A-Za-z ]+" style="text-transform:uppercase;"
         onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="80" placeholder="Descripción">
       </div>
       <div class="form-group col-md-6">
@@ -71,28 +63,18 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
     </form>
   </div>
     <!--Formulario-->
-      <div id="col-sm-4">  
-        <img src="../imagenes/areasadd.png" class="img-circle" alt="Cinque Terre">  
+      <div id="col-sm-4">
+        <img src="../imagenes/areasadd.png" class="img-circle" alt="Cinque Terre">
       </div>
     </div>
     </div>
     <div class="col-sm-2 izquierda">
     </div>
   </div>
-
 </div>
-
-
-  <p> 
-      
-  </p>
 </body>
-
 </html>
-
-
-<?php 
-
+<?php
 }
 // cuando no este logueado (iniciado sesion) mostrara la siguiente alerta de acceso denegado y redireccionara al login de inicio de sesion
 else

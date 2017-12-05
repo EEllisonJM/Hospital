@@ -73,7 +73,7 @@ if($_SESSION["tipo"]=="JEFE DE AREA"||$_SESSION["tipo"]=="ADMINISTRADOR"){?>
           </a>
           <ul>
             <li>
-              <a href="/PW/Hospital/administrador/area_agregar.php">Alta
+              <a href="/PW/Hospital/administrador/agregar_area.php">Alta
               </a>
             </li>
             <li>
