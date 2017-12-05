@@ -81,7 +81,7 @@ if($_SESSION["tipo"]=="JEFE DE AREA"||$_SESSION["tipo"]=="ADMINISTRADOR"){?>
               </a>
             </li>
             <li>
-              <a href="">Editar
+              <a href="/PW/Hospital/administrador/editar_area.php">Editar
               </a>
             </li>
           </ul>
@@ -118,8 +118,7 @@ if($_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS"||$_SESSION["tipo"]=="ADMINISTRA
               <ul>
                 <li>
                   <a href="">Alta
-                  </a>
-                </li>
+                  </a>4
                 <li>
                   <a href="">Editar
                   </a>
