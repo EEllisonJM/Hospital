@@ -75,12 +75,10 @@ $http.get("../BDArea.php")
     $scope.names = response.data.datos;
     $scope.mirespuesta=null;
   });
-
 $scope.modify = function(tableData) {
     $scope.modifyField = true;
     $scope.viewField = true;
   };
-
 $scope.update = function(tableData){
 $http.post("../Update_Area.php",{
   "id":tableData.id,
@@ -96,15 +94,6 @@ $http.post("../Update_Area.php",{
             // pass the error the the error service
             return errorService.handleError(error);
           })
-    };
-$scope.delete = function(tableData){
-  $http.post('../Delete_Area.php',{
-    "id":tableData.id})
-  $http.get("../BDArea.php")
-      .then(function (response) {
-        $scope.names = response.data.datos;
-        $scope.mirespuesta=null;
-      });
     };
 });
 </script>
