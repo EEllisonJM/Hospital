@@ -97,11 +97,11 @@ if($_SESSION["tipo"]=="ENCARGADO DE FARMACIA"||$_SESSION["tipo"]=="ADMINISTRADOR
               </a>
             </li>
             <li>
-              <a href="">Baja
+              <a href="/PW/Hospital/administrador/eliminar_producto.php">Baja
               </a>
             </li>
             <li>
-              <a href="">Editar
+              <a href="/PW/Hospital/administrador/editar_producto.php">Editar
               </a>
             </li>
           </ul>
