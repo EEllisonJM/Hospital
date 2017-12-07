@@ -57,7 +57,7 @@ include("menu.php");
 <!-- FUNCIONES -->
 <script>
 angular.module('myApp', []).controller('namesCtrl', function($scope, $http) {
-$http.get("../BDArea.php")
+$http.get("../BD_Usuario.php")
   .then(function (response) {
     $scope.names = response.data.datos;
     $scope.mirespuesta=null;
@@ -67,7 +67,7 @@ $scope.modify = function(tableData) {
     $scope.viewField = true;
   };
 $scope.delete = function(tableData){
-  $http.post('../Delete_Area.php',{
+  $http.post('../Delete_Usuario.php',{
     "id":tableData.id})
   $http.get("../BDArea.php")
       .then(function (response) {
