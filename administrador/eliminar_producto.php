@@ -12,7 +12,7 @@ include("menu.php");
   <title>Hospital</title>
 </head>
 
- <center><label style="font-weight:bold; font-size: 30pt;">Listado de Productos</label></center>
+ <center><label style="font-weight:bold; font-size: 30pt;">Listado de areas</label></center>
 
 <div ng-app="myApp" ng-controller="namesCtrl" class="centrar col-md-8" >
   <div class="container col-sm-12">
@@ -25,26 +25,46 @@ include("menu.php");
   <table border="2" align="center" class="table table-striped">
       <thead>
         <tr>
-          <td align="center" colspan="3">Datos</td>
+          <td align="center" colspan="6">Datos</td>
         </tr>
       </thead>
 
     <thead>
       <tr>
-        <th>nomProducto</th>
-        <th>tipoProducto</th>
+        <th>Id Producto</th>
+        <th>Nombre</th>
+        <th>Tipo producto</th>
+        <th>Existencia</th>
+        <th>Precio</th>
+        <th>Visible</th>
         <th>Acciones</th>
       </tr>
     </thead>
-  <tr ng-repeat="x in names | filter:test:strict">
-    <td>
-        <div ng-hide="viewField">{{ x.nomProducto | uppercase }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.nomProducto" /></div>
-    </td>
-    <td>
-        <div ng-hide="viewField">{{ x.tipoProducto | uppercase }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.tipoProducto" /></div>
-    </td>
+    <tr ng-repeat="x in names | filter:test:strict">
+     <td>
+         <div ng-hide="viewField">{{ x.idproducto | uppercase }}</div>
+         <div ng-show="modifyField"><input type="text" ng-model="x.idproducto" /></div>
+     </td>
+     <td>
+         <div ng-hide="viewField">{{ x.nomproducto | uppercase }}</div>
+         <div ng-show="modifyField"><input type="text" ng-model="x.nomproducto" /></div>
+     </td>
+     <td>
+         <div ng-hide="viewField">{{ x.tipoproducto | uppercase }}</div>
+         <div ng-show="modifyField"><input type="text" ng-model="x.tipoproducto" /></div>
+     </td>
+     <td>
+         <div ng-hide="viewField">{{ x.existencia | uppercase }}</div>
+         <div ng-show="modifyField"><input type="text" ng-model="x.existencia" /></div>
+     </td>
+     <td>
+         <div ng-hide="viewField">{{ x.precio | uppercase }}</div>
+         <div ng-show="modifyField"><input type="text" ng-model="x.precio" /></div>
+     </td>
+     <td>
+         <div ng-hide="viewField">{{ x.visible | uppercase }}</div>
+         <div ng-show="modifyField"><input type="text" ng-model="x.visible" /></div>
+     </td>
     <td>
         <button class="btn btn-danger" ng-hide="viewField" ng-click="delete(x)">Eliminar</button>
     </td>
@@ -73,7 +93,7 @@ $scope.modify = function(tableData) {
   };
 $scope.delete = function(tableData){
   $http.post('../Delete_Farmacia.php',{
-    "id":tableData.id})
+    "id":tableData.idproducto})
   $http.get("../BD_Farmacia.php")
       .then(function (response) {
         $scope.names = response.data.datos;

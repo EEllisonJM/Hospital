@@ -9,9 +9,9 @@ include("menu.php");
 <head>
  <meta charset="UTF-8">
   <title>Hospital</title>
-  <link rel="stylesheet" type="text/css" href="/PW/Hospital/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/PW/Hospital/administrador/estilo_admin.css">
-  <link rel="stylesheet" href="/PW/Hospital/administrador/estilo.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="estilo_admin.css">
+  <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 

@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <title>Hospital</title>
-    <link rel="stylesheet" type="text/css" href="/PW/Hospital/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/PW/Hospital/administrador/estilo_admin.css">
-    <link rel="stylesheet" href="/PW/Hospital/administrador/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilo_admin.css">
+    <link rel="stylesheet" href="estilo.css">
   </head>
   <!-- ============ ENLACES DE NAVEGACION ====================== -->
   <body>
@@ -18,7 +18,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="/PW/Hospital/ses/logout.php">
+          <a href="../ses/logout.php">
             <span class="glyphicon glyphicon-ban-circle"> </span> Cerrar sesion
           </a>
         </li>
@@ -32,15 +32,15 @@
           </a>
           <ul>
             <li>
-              <a href="/PW/Hospital/administrador/agregar_usuario.php">Alta
+              <a href="agregar_usuario.php">Alta
               </a>
             </li>
             <li>
-              <a href="/PW/Hospital/administrador/eliminar_usuario.php">Baja
+              <a href="eliminar_usuario.php">Baja
               </a>
             </li>
             <li>
-              <a href="/PW/Hospital/administrador/editar_usuario.php">Editar
+              <a href="editar_usuario.php">Editar
               </a>
             </li>
           </ul>
@@ -53,15 +53,15 @@ if($_SESSION["tipo"]=="GERENTE"||$_SESSION["tipo"]=="ADMINISTRADOR"){?>
           </a>
           <ul>
             <li>
-              <a href="/PW/Hospital/administrador/agregar_empleado.php">Alta
+              <a href="agregar_empleado.php">Alta
               </a>
             </li>
             <li>
-              <a href="/PW/Hospital/administrador/eliminar_empleado.php">Baja
+              <a href="eliminar_empleado.php">Baja
               </a>
             </li>
             <li>
-              <a href="/PW/Hospital/administrador/editar_empleado.php">Editar
+              <a href="editar_empleado.php">Editar
               </a>
             </li>
           </ul>
@@ -73,15 +73,15 @@ if($_SESSION["tipo"]=="JEFE DE AREA"||$_SESSION["tipo"]=="ADMINISTRADOR"){?>
           </a>
           <ul>
             <li>
-              <a href="/PW/Hospital/administrador/agregar_area.php">Alta
+              <a href="agregar_area.php">Alta
               </a>
             </li>
             <li>
-              <a href="/PW/Hospital/administrador/eliminar_area.php">Baja
+              <a href="eliminar_area.php">Baja
               </a>
             </li>
             <li>
-              <a href="/PW/Hospital/administrador/editar_area.php">Editar
+              <a href="editar_area.php">Editar
               </a>
             </li>
           </ul>
@@ -93,15 +93,15 @@ if($_SESSION["tipo"]=="ENCARGADO DE FARMACIA"||$_SESSION["tipo"]=="ADMINISTRADOR
           </a>
           <ul>
             <li>
-              <a href="/PW/Hospital/administrador/agregar_producto.php">Alta
+              <a href="agregar_producto.php">Alta
               </a>
             </li>
             <li>
-              <a href="/PW/Hospital/administrador/eliminar_producto.php">Baja
+              <a href="eliminar_producto.php">Baja
               </a>
             </li>
             <li>
-              <a href="/PW/Hospital/administrador/editar_producto.php">Editar
+              <a href="editar_producto.php">Editar
               </a>
             </li>
           </ul>
