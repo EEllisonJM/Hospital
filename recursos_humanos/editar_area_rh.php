@@ -41,7 +41,7 @@ include("../configuraciondb.php"); //conexion de base de datos
   <tr ng-repeat="x in names | filter:test:strict">
     <td>
         <div ng-hide="viewField">{{ x.idEmpleado }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.idEmpleado" /></div>
+        <div ng-show="modifyField">{{ x.idEmpleado }}</div>
     </td>
     <td>
         <div ng-hide="viewField">{{ x.idArea }}</div>
@@ -81,9 +81,8 @@ $scope.modify = function(tableData) {
   };
 $scope.update = function(tableData){
 $http.post("Update_Area_rh.php",{
-  "id":tableData.id,
-  "nombre":tableData.nombre,
-  "descripcion":tableData.descripcion,
+  "idEmpleado":tableData.idEmpleado,
+  "idArea":tableData.idArea,
   "visible":tableData.visible } )
   .then(function(response){
         $scope.modifyField = false;
