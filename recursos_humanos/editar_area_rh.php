@@ -40,15 +40,15 @@ include("../configuraciondb.php"); //conexion de base de datos
 
   <tr ng-repeat="x in names | filter:test:strict">
     <td>
-        <div ng-hide="viewField">{{ x.nombre | uppercase }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.nombre" /></div>
+        <div ng-hide="viewField">{{ x.idEmpleado }}</div>
+        <div ng-show="modifyField"><input type="text" ng-model="x.idEmpleado" /></div>
     </td>
     <td>
-        <div ng-hide="viewField">{{ x.descripcion | uppercase }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.descripcion" /></div>
+        <div ng-hide="viewField">{{ x.idArea }}</div>
+        <div ng-show="modifyField"><input type="text" ng-model="x.idArea" /></div>
     </td>
     <td>
-        <div ng-hide="viewField">{{ x.visible | uppercase }}</div>
+        <div ng-hide="viewField">{{ x.visible }}</div>
         <div ng-show="modifyField"><input type="text" ng-model="x.visible" /></div>
     </td>
     <td>
