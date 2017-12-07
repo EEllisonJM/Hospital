@@ -12,7 +12,7 @@ include("menu.php");
   <title>Hospital</title>
 </head>
 <body>
- <center><label style="font-weight:bold; font-size: 30pt;">Listado de areas</label></center>
+ <center><label style="font-weight:bold; font-size: 30pt;">Listado de Usuarios</label></center>
 
 <div ng-app="myApp" ng-controller="namesCtrl" class="centrar col-md-8" >
   <div class="container col-sm-12">

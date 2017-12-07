@@ -9,10 +9,8 @@ while ($rs = mysqli_fetch_array($result)) {
     if ($outp != "") {
         $outp .= ",";
     }
-    $outp .= '{"nombre":"' . $rs["nombre"] . '",';
+    $outp .= '{"nomProducto":"' . $rs["nomProducto"] . '",';
     $outp .= '"tipoProducto":"' . $rs["tipoProducto"] . '",';
-    $outp .= '"existencia":"' . $rs["existencia"] . '",';
-    $outp .= '"precio":"' . $rs["precio"] . '",';
     $outp .= '"visible":"' . $rs["visible"] . '",';
     $outp .= '"id":"' . $rs["idProducto"] . '"}';
 }
