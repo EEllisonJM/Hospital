@@ -118,7 +118,7 @@ if($_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS"||$_SESSION["tipo"]=="ADMINISTRA
               <ul>
                 <li>
                   <a href="">Alta
-                  </a>4
+                  </a>
                 <li>
                   <a href="">Editar
                   </a>
