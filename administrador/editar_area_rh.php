@@ -3,7 +3,7 @@ session_start();
 ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("../configuraciondb.php"); //conexion de base de datos
-include("../administrador/menu.php");
+include("menu.php");
 $ver_areas = mysqli_query($conexion, "SELECT * FROM area");
 ?>
 <html>
@@ -70,7 +70,7 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM area");
 </div>
 <div class="col-md-8">
   <div class="col-sm-9"></div>
-<center><a class="btn btn-danger" href="../administrador/admin.php" role="button"><span class="glyphicon glyphicon-share-alt"></span>
+<center><a class="btn btn-danger" href="admin.php" role="button"><span class="glyphicon glyphicon-share-alt"></span>
           Regresar</a>
 </center>
 </div>
@@ -79,7 +79,7 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM area");
 <!-- FUNCIONES -->
 <script>
 angular.module('myApp', []).controller('namesCtrl', function($scope, $http) {
-$http.get("BDArea_rh.php")
+$http.get("../BDArea_rh.php")
   .then(function (response) {
     $scope.names = response.data.datos;
     $scope.mirespuesta=null;
@@ -89,7 +89,7 @@ $scope.modify = function(tableData) {
     $scope.viewField = true;
   };
 $scope.update = function(tableData){
-$http.post("Update_Area_rh.php",{
+$http.post("../Update_Area_rh.php",{
   "idEmpleado":tableData.idEmpleado,
   "idArea":tableData.idArea,
   "visible":tableData.visible } )
