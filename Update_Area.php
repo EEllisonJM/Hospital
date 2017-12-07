@@ -10,7 +10,7 @@ $nombre      = mysqli_real_escape_string($conexion, $data->nombre);
 $descripcion = mysqli_real_escape_string($conexion, $data->descripcion);
 $visible     = mysqli_real_escape_string($conexion, $data->visible);
 // mysqli query para actualizar datos
-$query       = "UPDATE area SET nombre='$nombre',descripcion='$descripcion',visible='$visible' WHERE idArea=$id";
+$query       = "UPDATE Area SET nombre='$nombre',descripcion='$descripcion',visible='$visible' WHERE idArea=$id";
 mysqli_query($conexion, $query);
 echo "Actualizacion correcta";
 ?>

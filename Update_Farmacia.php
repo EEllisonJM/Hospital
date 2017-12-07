@@ -13,7 +13,7 @@ $existencia = mysqli_real_escape_string($conexion, $data->existencia);
 $precio = mysqli_real_escape_string($conexion, $data->precio);
 $visible = mysqli_real_escape_string($conexion, $data->visible);
 // mysqli query para actualizar datos
-$query = "UPDATE farmacia SET idproducto='$idproducto',nomproducto='$nomproducto',tipoproducto='$tipoproducto',existencia='$existencia',precio='$precio',
+$query = "UPDATE Farmacia SET idproducto='$idproducto',nomproducto='$nomproducto',tipoproducto='$tipoproducto',existencia='$existencia',precio='$precio',
 visible='$visible' WHERE idproducto=$idproducto";
 mysqli_query($conexion, $query);
 echo "Actualizacion correcta";

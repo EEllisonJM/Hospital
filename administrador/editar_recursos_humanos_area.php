@@ -79,7 +79,7 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM area");
 <!-- FUNCIONES -->
 <script>
 angular.module('myApp', []).controller('namesCtrl', function($scope, $http) {
-$http.get("../BDArea_rh.php")
+$http.get("../BD_RecursosHumanos_Area.php")
   .then(function (response) {
     $scope.names = response.data.datos;
     $scope.mirespuesta=null;
@@ -89,7 +89,7 @@ $scope.modify = function(tableData) {
     $scope.viewField = true;
   };
 $scope.update = function(tableData){
-$http.post("../Update_Area_rh.php",{
+$http.post("../Update_RecursosHumanos_Area.php",{
   "idEmpleado":tableData.idEmpleado,
   "idArea":tableData.idArea,
   "visible":tableData.visible } )

@@ -22,7 +22,7 @@ $ciudad = mysqli_real_escape_string($conexion, $data->ciudad);
 $e_mail = mysqli_real_escape_string($conexion, $data->e_mail);
 $visible = mysqli_real_escape_string($conexion, $data->visible);
 // mysqli query para actualizar datos
-$query = "UPDATE empleado SET idEmpleado='$idEmpleado',idpuesto='$idpuesto',nombre='$nombre',apellidoP='$apellidoP',apellidoM='$apellidoM',
+$query = "UPDATE Empleado SET idEmpleado='$idEmpleado',idpuesto='$idpuesto',nombre='$nombre',apellidoP='$apellidoP',apellidoM='$apellidoM',
 sexo='$sexo',telefono='$telefono',calle='$calle',colonia='$colonia',codigo_postal='$codigo_postal',ciudad='$ciudad',e_mail='$e_mail',
 visible='$visible' WHERE idEmpleado=$idEmpleado";
 mysqli_query($conexion, $query);

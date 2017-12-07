@@ -120,7 +120,7 @@ if($_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS"||$_SESSION["tipo"]=="ADMINISTRA
                   <a href="">Alta
                   </a>
                 <li>
-                  <a href="editar_area_rh.php">Editar
+                  <a href="editar_recursos_humanos_area.php">Editar
                   </a>
                 </li>
                 <li>
