@@ -3,7 +3,8 @@ session_start();
 ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("../configuraciondb.php"); //conexion de base de datos
-//include("../administrador/menu.php");
+include("../administrador/menu.php");
+$ver_areas = mysqli_query($conexion, "SELECT * FROM area");
 ?>
 <html>
 <script src="../angular.min.js"></script>
@@ -45,7 +46,15 @@ include("../configuraciondb.php"); //conexion de base de datos
     </td>
     <td>
         <div ng-hide="viewField">{{ x.idArea }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.idArea" /></div>
+        <div ng-show="modifyField"><select name="puesto" ng-model="x.idArea">
+                <?php
+    while ($row = mysqli_fetch_array($ver_areas)) {
+        echo "<option value='" . $row['idArea'] . "'>";
+        echo $row['nombre'];
+        echo "</option>";
+    }
+?>
+            </select></div>
     </td>
     <td>
         <div ng-hide="viewField">{{ x.visible }}</div>
