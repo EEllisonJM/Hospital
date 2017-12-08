@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 require("configuraciondb.php");
-$query = "SELECT * FROM recursoshumanos";
+$query = "SELECT * FROM RecursosHumanos";
 $result = mysqli_query($conexion, $query);
 $outp   = "";
 while ($rs = mysqli_fetch_array($result)) {

@@ -4,7 +4,7 @@ ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("../configuraciondb.php"); //conexion de base de datos
 include("menu.php");
-$ver_areas = mysqli_query($conexion, "SELECT * FROM area");
+$ver_areas = mysqli_query($conexion, "SELECT * FROM Area");
 ?>
 <html>
 <script src="../angular.min.js"></script>
@@ -32,8 +32,8 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM area");
 
     <thead>
       <tr>
-        <th>idEmpleado</th>
-        <th>idArea</th>
+        <th>Empleado</th>
+        <th>Area</th>
         <th>Visible</th>
         <th>Acciones</th>
       </tr>
@@ -47,14 +47,14 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM area");
     <td>
         <div ng-hide="viewField">{{ x.idArea }}</div>
         <div ng-show="modifyField"><select name="puesto" ng-model="x.idArea">
-                <?php
-    while ($row = mysqli_fetch_array($ver_areas)) {
-        echo "<option value='" . $row['idArea'] . "'>";
-        echo $row['nombre'];
-        echo "</option>";
-    }
-?>
-            </select></div>
+        <?php
+		while ($row = mysqli_fetch_array($ver_areas)) {
+			echo "<option value='" . $row['idArea'] . "'>";
+			echo $row['nombre'];
+			echo "</option>";
+		}
+		?>
+        </select></div>
     </td>
     <td>
         <div ng-hide="viewField">{{ x.visible }}</div>
