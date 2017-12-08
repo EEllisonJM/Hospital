@@ -11,6 +11,9 @@ while ($rs = mysqli_fetch_array($result)) {
     }
     $outp .= '{"idEmpleado":"' . $rs["idEmpleado"] . '",';
     $outp .= '"idArea":"' . $rs["idArea"] . '",';
+    $outp .= '"horaEntrada":"' . $rs["horaEntrada"] . '",';
+	$outp .= '"horaSalida":"' . $rs["horaSalida"] . '",';
+    $outp .= '"bonificacion":"' . $rs["bonificacion"] . '",';
     $outp .= '"visible":"' . $rs["visible"] . '"}';
 }
 $outp = '{"datos":[' . $outp . ']}';

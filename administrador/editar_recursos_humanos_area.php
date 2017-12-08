@@ -79,7 +79,7 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
 <!-- FUNCIONES -->
 <script>
 angular.module('myApp', []).controller('namesCtrl', function($scope, $http) {
-$http.get("../BD_RecursosHumanos_Area.php")
+$http.get("../BD_RecursosHumanos.php")
   .then(function (response) {
     $scope.names = response.data.datos;
     $scope.mirespuesta=null;
