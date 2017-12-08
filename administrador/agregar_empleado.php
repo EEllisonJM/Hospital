@@ -4,10 +4,10 @@ ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("../configuraciondb.php"); //conexion de base de datos
 include("menu.php");
-$consulta = mysqli_query($conexion, "SELECT * FROM puesto");
+$consulta = mysqli_query($conexion, "SELECT * FROM Puesto");
 if ($_SESSION["tipo"] == "ADMINISTRADOR" || $_SESSION["tipo"] == "GERENTE" || $_SESSION["tipo"] == "JEFE DE AREA" || $_SESSION["tipo"] == "ENCARGADO DE FARMACIA" || $_SESSION["tipo"] == "JEFE DE RECURSOS HUMANOS") {
     if ($_REQUEST['registrar'] == "Registrar") {
-        $resultado = mysqli_query($conexion, "INSERT INTO empleado (idpuesto, apellidoP, apellidoM, nombre,sexo,fecha_nacimiento,telefono,calle,colonia,codigo_postal,ciudad, e_mail,visible)
+        $resultado = mysqli_query($conexion, "INSERT INTO Empleado (idPuesto, apellidoP, apellidoM, nombre,sexo,fecha_nacimiento,telefono,calle,colonia,codigo_postal,ciudad, e_mail,visible)
 VALUES ('" . $_REQUEST["puesto"] . "','" . $_REQUEST["apellidop"] . "','" . $_REQUEST["apellidom"] . "','" . $_REQUEST["nombre"] . "','" . $_REQUEST["sexo"] . "','" . $_REQUEST["fnace"] . "','" . $_REQUEST["telefono"] . "','" . $_REQUEST["calle"] . "','" . $_REQUEST["colonia"] . "','" . $_REQUEST["cp"] . "','" . $_REQUEST["ciudad"] . "','" . $_REQUEST["email"] . "','1')");
 ?>
 <script>
@@ -70,8 +70,8 @@ VALUES ('" . $_REQUEST["puesto"] . "','" . $_REQUEST["apellidop"] . "','" . $_RE
               <select name="puesto">
                 <?php
     while ($row = mysqli_fetch_array($consulta)) {
-        echo "<option value='" . $row['idpuesto'] . "'>";
-        echo $row['tipoempleado'];
+        echo "<option value='" . $row['idPuesto'] . "'>";
+        echo $row['tipoEmpleado'];
         echo "</option>";
     }
 ?>
