@@ -138,7 +138,7 @@ if($_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS"||$_SESSION["tipo"]=="ADMINISTRA
                   </a>
                 </li>
                 <li>
-                  <a href="">Editar
+                  <a href="editar_recursos_humanos_sueldo.php">Editar
                   </a>
                 </li>
                 <li>
