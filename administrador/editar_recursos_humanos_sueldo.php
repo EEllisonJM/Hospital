@@ -13,7 +13,7 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
   <title>Hospital</title>
 </head>
 <body>
- <center><label style="font-weight:bold; font-size: 30pt;">Asignar areas</label></center>
+ <center><label style="font-weight:bold; font-size: 30pt;">Asignar sueldos</label></center>
 
 <div ng-app="myApp" ng-controller="namesCtrl" class="centrar col-md-8" >
   <div class="container col-sm-12">
@@ -26,13 +26,15 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
   <table border="2" align="center" class="table table-striped">
       <thead>
         <tr>
-          <td align="center" colspan="4">Datos</td>
+          <td align="center" colspan="6">Datos</td>
         </tr>
       </thead>
 
     <thead>
       <tr>
         <th>Empleado</th>
+		<th>Hora de entrada</th>
+        <th>Hora de salida</th>
         <th>Bonificación</th>
         <th>Visible</th>
         <th>Acciones</th>
@@ -43,6 +45,14 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
     <td>
         <div ng-hide="viewField">{{ x.idEmpleado }}</div>
         <div ng-show="modifyField">{{ x.idEmpleado }}</div>
+    </td>
+	<td>
+        <div ng-hide="viewField">{{ x.horaEntrada }}</div>
+        <div ng-show="modifyField"><input type="time" step="3" ng-model-options="{timezone:'UTC'}" ng-model="x.horaEntrada" /></div>
+    </td>
+	<td>
+        <div ng-hide="viewField">{{ x.horaSalida }}</div>
+        <div ng-show="modifyField"><input type="time" step="3" ng-model-options="{timezone:'UTC'}" ng-model="x.horaSalida" /></div>
     </td>
     <td>
         <div ng-hide="viewField">{{ x.bonificacion }}</div>
@@ -83,6 +93,8 @@ $scope.modify = function(tableData) {
 $scope.update = function(tableData){
 $http.post("../Update_RecursosHumanos_Sueldo.php",{
   "idEmpleado":tableData.idEmpleado,
+  "horaEntrada":tableData.horaEntrada,
+  "horaSalida":tableData.horaSalida,
   "bonificacion":tableData.bonificacion,
   "visible":tableData.visible } )
   .then(function(response){

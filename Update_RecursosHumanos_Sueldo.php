@@ -6,10 +6,12 @@ require("configuraciondb.php");
 $data        = json_decode(file_get_contents('php://input'));
 //asigna los datos del array
 $idEmpleado  = mysqli_real_escape_string($conexion, $data->idEmpleado);
+$horaEntrada      = mysqli_real_escape_string($conexion, $data->horaEntrada);
+$horaSalida      = mysqli_real_escape_string($conexion, $data->horaSalida);
 $bonificacion      = mysqli_real_escape_string($conexion, $data->bonificacion);
 $visible     = mysqli_real_escape_string($conexion, $data->visible);
 // mysqli query para actualizar datos
-$query       = "UPDATE RecursosHumanos SET bonificacion='$bonificacion',visible='$visible' WHERE idEmpleado=$idEmpleado";
+$query       = "UPDATE RecursosHumanos SET horaEntrada='$horaEntrada',horaSalida='$horaSalida',bonificacion='$bonificacion',visible='$visible' WHERE idEmpleado=$idEmpleado";
 mysqli_query($conexion, $query);
 echo "Actualizacion correcta";
 ?>
