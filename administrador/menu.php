@@ -124,7 +124,7 @@ if($_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS"||$_SESSION["tipo"]=="ADMINISTRA
                   </a>
                 </li>
                 <li>
-                  <a href="">Baja
+                  <a href="eliminar_recursos_humanos.php">Baja
                   </a>
                 </li>
               </ul>
@@ -142,7 +142,7 @@ if($_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS"||$_SESSION["tipo"]=="ADMINISTRA
                   </a>
                 </li>
                 <li>
-                  <a href="">Baja
+                  <a href="eliminar_recursos_humanos.php">Baja
                   </a>
                 </li>
               </ul>
