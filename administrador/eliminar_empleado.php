@@ -56,8 +56,8 @@ include("menu.php");
         <div ng-show="modifyField"><input type="text" ng-model="x.idEmpleado" /></div>
     </td>
     <td>
-        <div ng-hide="viewField">{{ x.idpuesto | uppercase }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.idpuesto" /></div>
+        <div ng-hide="viewField">{{ x.idPuesto | uppercase }}</div>
+        <div ng-show="modifyField"><input type="text" ng-model="x.idPuesto" /></div>
     </td>
     <td>
         <div ng-hide="viewField">{{ x.nombre | uppercase }}</div>
@@ -135,7 +135,7 @@ $scope.modify = function(tableData) {
 $scope.update = function(tableData){
 $http.post("../Update_Empleado.php",{
   "idEmpleado":tableData.idEmpleado,
-  "idpuesto":tableData.idpuesto,
+  "idPuesto":tableData.idPuesto,
   "nombre":tableData.nombre,
   "apellidoP":tableData.apellidoP,
   "apellidoM":tableData.apellidoM,
