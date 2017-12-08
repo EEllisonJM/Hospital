@@ -7,7 +7,7 @@ require("configuraciondb.php");
 // pasa el contenido de mostrar_area
 $data = json_decode(file_get_contents("php://input"));
 
-$query = "UPDATE Empleado set visible = 0 WHERE idEmpleado=$data->id";
+$query = "UPDATE empleado set visible = 0 WHERE idEmpleado=$data->id";
 mysqli_query($conexion, $query);
 echo "Eliminado";
 ?>
