@@ -9,9 +9,9 @@ include("menu.php");
 <head>
  <meta charset="UTF-8">
   <title>Hospital</title>
-  <link rel="stylesheet" type="text/css" href="/PW/Hospital/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/PW/Hospital/administrador/estilo_admin.css">
-  <link rel="stylesheet" href="/PW/Hospital/administrador/estilo.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="estilo_admin.css">
+  <link rel="stylesheet" href="estilo.css">
 
 </head>
 <body>
@@ -44,16 +44,16 @@ include("menu.php");
 </thead>
    <tr ng-repeat="x in names | filter:test:strict">
     <td>
-        <div ng-hide="viewField">{{ x.idproducto | uppercase }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.idproducto" /></div>
+        <div ng-hide="viewField">{{ x.idProducto | uppercase }}</div>
+        <div ng-show="modifyField"><input type="text" ng-model="x.idProducto" /></div>
     </td>
     <td>
-        <div ng-hide="viewField">{{ x.nomproducto | uppercase }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.nomproducto" /></div>
+        <div ng-hide="viewField">{{ x.nomProducto | uppercase }}</div>
+        <div ng-show="modifyField"><input type="text" ng-model="x.nomProducto" /></div>
     </td>
     <td>
-        <div ng-hide="viewField">{{ x.tipoproducto | uppercase }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.tipoproducto" /></div>
+        <div ng-hide="viewField">{{ x.tipoProducto | uppercase }}</div>
+        <div ng-show="modifyField"><input type="text" ng-model="x.tipoProducto" /></div>
     </td>
     <td>
         <div ng-hide="viewField">{{ x.existencia | uppercase }}</div>
@@ -93,9 +93,9 @@ $scope.modify = function(tableData) {
   };
 $scope.update = function(tableData){
 $http.post("../Update_Farmacia.php",{
-  "idproducto":tableData.idproducto,
-  "nomproducto":tableData.nomproducto,
-  "tipoproducto":tableData.tipoproducto,
+  "idProducto":tableData.idProducto,
+  "nomProducto":tableData.nomProducto,
+  "tipoProducto":tableData.tipoProducto,
   "existencia":tableData.existencia,
   "precio":tableData.precio,
   "visible":tableData.visible } )

@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 require("configuraciondb.php");
 
-$result = mysqli_query($conexion,"SELECT * FROM farmacia");
+$result = mysqli_query($conexion,"SELECT * FROM Farmacia");
 
 $outp = "";
 while($rs = mysqli_fetch_array($result))
@@ -12,9 +12,9 @@ while($rs = mysqli_fetch_array($result))
     {
     	$outp .= ",";
     }
-    $outp .= '{"idproducto":"'  . $rs["idproducto"] . '",';
-    $outp .= '"nomproducto":"'   . $rs["nomproducto"]        . '",';
-    $outp .= '"tipoproducto":"'. $rs["tipoproducto"]     . '",' ;
+    $outp .= '{"idProducto":"'  . $rs["idProducto"] . '",';
+    $outp .= '"nomProducto":"'   . $rs["nomProducto"]        . '",';
+    $outp .= '"tipoProducto":"'. $rs["tipoProducto"]     . '",' ;
     $outp .= '"existencia":"'. $rs["existencia"]     . '",' ;
     $outp .= '"precio":"'. $rs["precio"]     . '",' ;
     $outp .= '"visible":"'. $rs["visible"]     . '"}';
