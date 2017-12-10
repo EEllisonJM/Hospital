@@ -8,7 +8,7 @@ $consulta = mysqli_query($conexion, "SELECT * FROM Puesto");
 if ($_SESSION["tipo"] == "ADMINISTRADOR" || $_SESSION["tipo"] == "GERENTE" || $_SESSION["tipo"] == "JEFE DE AREA" || $_SESSION["tipo"] == "ENCARGADO DE FARMACIA" || $_SESSION["tipo"] == "JEFE DE RECURSOS HUMANOS") {
     if ($_REQUEST['registrar'] == "Registrar") {
         $resultado = mysqli_query($conexion, "INSERT INTO Empleado (idPuesto, apellidoP, apellidoM, nombre,sexo,fecha_nacimiento,telefono,calle,colonia,codigo_postal,ciudad, e_mail,visible)
-VALUES ('" . $_REQUEST["puesto"] . "','" . $_REQUEST["apellidop"] . "','" . $_REQUEST["apellidom"] . "','" . $_REQUEST["nombre"] . "','" . $_REQUEST["sexo"] . "','" . $_REQUEST["fnace"] . "','" . $_REQUEST["telefono"] . "','" . $_REQUEST["calle"] . "','" . $_REQUEST["colonia"] . "','" . $_REQUEST["cp"] . "','" . $_REQUEST["ciudad"] . "','" . $_REQUEST["email"] . "','1')");
+VALUES ('" . $_REQUEST["puesto"] . "','" . $_REQUEST["apellidoP"] . "','" . $_REQUEST["apellidoM"] . "','" . $_REQUEST["nombre"] . "','" . $_REQUEST["sexo"] . "','" . $_REQUEST["fnace"] . "','" . $_REQUEST["telefono"] . "','" . $_REQUEST["calle"] . "','" . $_REQUEST["colonia"] . "','" . $_REQUEST["cp"] . "','" . $_REQUEST["ciudad"] . "','" . $_REQUEST["email"] . "','1')");
 ?>
 <script>
   alert("Usuario Agregado con exito");
@@ -42,7 +42,7 @@ VALUES ('" . $_REQUEST["puesto"] . "','" . $_REQUEST["apellidop"] . "','" . $_RE
               </label>
             </td>
             <td>
-              <input type="text" name="apellidop" pattern="[A-Za-z ]+" style="text-transform:uppercase;"
+              <input type="text" name="apellidoP" pattern="[A-Za-z ]+" style="text-transform:uppercase;"
                      onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="50" required>
             </td>
             <td>
@@ -50,7 +50,7 @@ VALUES ('" . $_REQUEST["puesto"] . "','" . $_REQUEST["apellidop"] . "','" . $_RE
               </label>
             </td>
             <td>
-              <input type="text" name="apellidom" pattern="[A-Za-z ]+" style="text-transform:uppercase;"
+              <input type="text" name="apellidoM" pattern="[A-Za-z ]+" style="text-transform:uppercase;"
                      onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="50" required>
             </td>
           </tr>

@@ -42,16 +42,16 @@ include("menu.php");
     </thead>
     <tr ng-repeat="x in names | filter:test:strict">
      <td>
-         <div ng-hide="viewField">{{ x.idproducto | uppercase }}</div>
-         <div ng-show="modifyField"><input type="text" ng-model="x.idproducto" /></div>
+         <div ng-hide="viewField">{{ x.idProducto | uppercase }}</div>
+         <div ng-show="modifyField"><input type="text" ng-model="x.idProducto" /></div>
      </td>
      <td>
-         <div ng-hide="viewField">{{ x.nomproducto | uppercase }}</div>
-         <div ng-show="modifyField"><input type="text" ng-model="x.nomproducto" /></div>
+         <div ng-hide="viewField">{{ x.nomProducto | uppercase }}</div>
+         <div ng-show="modifyField"><input type="text" ng-model="x.nomProducto" /></div>
      </td>
      <td>
-         <div ng-hide="viewField">{{ x.tipoproducto | uppercase }}</div>
-         <div ng-show="modifyField"><input type="text" ng-model="x.tipoproducto" /></div>
+         <div ng-hide="viewField">{{ x.tipoProducto | uppercase }}</div>
+         <div ng-show="modifyField"><input type="text" ng-model="x.tipoProducto" /></div>
      </td>
      <td>
          <div ng-hide="viewField">{{ x.existencia | uppercase }}</div>
@@ -93,7 +93,7 @@ $scope.modify = function(tableData) {
   };
 $scope.delete = function(tableData){
   $http.post('../Delete_Farmacia.php',{
-    "id":tableData.idproducto})
+    "id":tableData.idProducto})
   $http.get("../BD_Farmacia.php")
       .then(function (response) {
         $scope.names = response.data.datos;

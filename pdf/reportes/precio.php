@@ -1,7 +1,7 @@
 
 <?php
 require_once('../lib/pdf/mpdf.php');
-include ("configuraciondb.php");
+include ("../../configuraciondb.php");
 if($_REQUEST['todo'] == "Todos") {
 $query = "SELECT * FROM Farmacia WHERE visible=1";
 }else{

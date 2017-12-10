@@ -1,7 +1,7 @@
 
 <?php
 require_once('../lib/pdf/mpdf.php');
-include ("configuraciondb.php");
+include ("../../configuraciondb.php");
 if($_REQUEST['perfecta'] == "perfecta") {
 $query = "SELECT RecursosHumanos.idEmpleado, RecursosHumanos.idArea, Asistencia.fecha, Asistencia.horaEntra, Asistencia.horaSale FROM RecursosHumanos INNER JOIN Asistencia ON RecursosHumanos.idEmpleado=Asistencia.idEmpleado AND Asistencia.horaEntra <= RecursosHumanos.horaEntrada";
 }else{

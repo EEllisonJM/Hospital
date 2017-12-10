@@ -2,7 +2,7 @@
 session_start();
 ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
-include("configuraciondb.php"); //conexion de base de datos
+include("../../configuraciondb.php"); //conexion de base de datos
 include("menu.php");
 $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoProducto FROM Farmacia WHERE visible=1");
 ?>

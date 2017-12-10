@@ -69,7 +69,7 @@ $scope.modify = function(tableData) {
 $scope.delete = function(tableData){
   $http.post('../Delete_Usuario.php',{
     "id":tableData.id})
-  $http.get("../BDArea.php")
+  $http.get("../BD_Usuario.php")
       .then(function (response) {
         $scope.names = response.data.datos;
         $scope.mirespuesta=null;

@@ -1,7 +1,7 @@
 
 <?php
 require_once('../lib/pdf/mpdf.php');
-include ("configuraciondb.php");
+include ("../../configuraciondb.php");
 if($_REQUEST['todo'] == "Todos") {
 $query = "SELECT Empleado.idEmpleado, Empleado.nombre, Empleado.apellidoM, Puesto.sueldo FROM Empleado INNER JOIN Puesto ON Empleado.idPuesto=Puesto.idPuesto AND  Empleado.visible=1";
 }else{
