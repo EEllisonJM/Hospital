@@ -9,7 +9,7 @@ $id          = mysqli_real_escape_string($conexion, $data->id);
 $nombre      = mysqli_real_escape_string($conexion, $data->nombre);
 $visible     = mysqli_real_escape_string($conexion, $data->visible);
 // mysqli query para actualizar datos
-$query       = "UPDATE Usuario SET nombre='$nombre',visible='$visible' WHERE idUsuario=$id";
+$query       = "UPDATE Usuario SET userName='$nombre',visible='$visible' WHERE idUsuario=$id";
 mysqli_query($conexion, $query);
 echo "Actualizacion correcta";
 ?>
