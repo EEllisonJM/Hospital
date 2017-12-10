@@ -22,7 +22,7 @@
   </ul>
 
   <ul class="nav navbar-nav navbar-right">
-      <li><a href="../Hospital/ses/logueo.php"><span class="glyphicon glyphicon-user"></span> Iniciar sesion</a></li>
+      <li><a href="ses/logueo.php"><span class="glyphicon glyphicon-user"></span> Iniciar sesion</a></li>
   </ul>
 </nav >
 
