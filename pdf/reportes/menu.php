@@ -18,7 +18,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="../ses/logout.php">
+          <a href="../../ses/logout.php">
             <span class="glyphicon glyphicon-ban-circle"> </span> Cerrar sesion
           </a>
         </li>

@@ -1,0 +1,3 @@
+DB_Name: id3946746_hospital
+DB_User: id3946746_root
+DB_Host: localhost

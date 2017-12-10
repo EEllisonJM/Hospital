@@ -1,5 +1,7 @@
-
 <?php
+session_start();
+ob_start();
+error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 require_once('../lib/pdf/mpdf.php');
 include ("../../configuraciondb.php");
 if($_REQUEST['todo'] == "Todos") {
