@@ -33,6 +33,7 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
     <thead>
       <tr>
         <th>Empleado</th>
+        <th>Sueldo</th>
 		<th>Hora de entrada</th>
         <th>Hora de salida</th>
         <th>Bonificación</th>
@@ -45,6 +46,10 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
     <td>
         <div ng-hide="viewField">{{ x.idEmpleado }}</div>
         <div ng-show="modifyField">{{ x.idEmpleado }}</div>
+    </td>
+    <td>
+        <div ng-hide="viewField">{{ x.sueldo }}</div>
+        <div ng-show="modifyField">{{ x.sueldo }}</div>
     </td>
 	<td>
         <div ng-hide="viewField">{{ x.horaEntrada }}</div>
@@ -93,6 +98,7 @@ $scope.modify = function(tableData) {
 $scope.update = function(tableData){
 $http.post("../Update_RecursosHumanos_Sueldo.php",{
   "idEmpleado":tableData.idEmpleado,
+  "sueldo":tableData.sueldo,
   "horaEntrada":tableData.horaEntrada,
   "horaSalida":tableData.horaSalida,
   "bonificacion":tableData.bonificacion,

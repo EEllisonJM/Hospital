@@ -117,9 +117,6 @@ if($_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS"||$_SESSION["tipo"]=="ADMINISTRA
               </a>
               <ul>
                 <li>
-                  <a href="">Alta
-                  </a>
-                <li>
                   <a href="editar_recursos_humanos_area.php">Editar
                   </a>
                 </li>
@@ -133,10 +130,6 @@ if($_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS"||$_SESSION["tipo"]=="ADMINISTRA
               <a href="">Asignar sueldo
               </a>
               <ul>
-                <li>
-                  <a href="">Alta
-                  </a>
-                </li>
                 <li>
                   <a href="editar_recursos_humanos_sueldo.php">Editar
                   </a>

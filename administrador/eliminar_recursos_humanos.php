@@ -34,6 +34,8 @@ include("menu.php");
 <thead>
   <tr>
      <th>ID Empleado</th>
+     <th>Nombre Empleado</th>
+     <th>Sueldo</th>
      <th>ID Area</th>
      <th>Hora de entrada</th>
      <th>Hora de salida</th>
@@ -46,6 +48,15 @@ include("menu.php");
     <td>
         <div ng-hide="viewField">{{ x.idEmpleado | uppercase }}</div>
         <div ng-show="modifyField"><input type="text" ng-model="x.idEmpleado" /></div>
+    </td>
+
+    <td>
+        <div ng-hide="viewField">{{ x.sueldo | uppercase }}</div>
+        <div ng-show="modifyField"><input type="text" ng-model="x.sueldo" /></div>
+    </td>
+    <td>
+        <div ng-hide="viewField">{{ x.nombre | uppercase }}</div>
+        <div ng-show="modifyField"><input type="text" ng-model="x.nombre" /></div>
     </td>
     <td>
         <div ng-hide="viewField">{{ x.idArea | uppercase }}</div>

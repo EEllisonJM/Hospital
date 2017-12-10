@@ -3,7 +3,8 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 require("configuraciondb.php");
 
-$result = mysqli_query($conexion,"SELECT * FROM Empleado");
+$result = mysqli_query($conexion,"SELECT e.idEmpleado,e.idPuesto, p.sueldo,e.apellidoP, e.apellidoM, e.nombre, e.sexo, e.fecha_nacimiento, e.telefono, e.calle, e.colonia, e.codigo_postal, e.ciudad, e.e_mail, e.visible FROM Empleado as e INNER JOIN Puesto as p
+WHERE e.idPuesto=p.idPuesto");
 
 $outp = "";
 while($rs = mysqli_fetch_array($result))
@@ -14,6 +15,7 @@ while($rs = mysqli_fetch_array($result))
     }
     $outp .= '{"idEmpleado":"'  . $rs["idEmpleado"] . '",';
     $outp .= '"idPuesto":"'   . $rs["idPuesto"]        . '",';
+    $outp .= '"sueldo":"'. $rs["sueldo"]     . '",' ;
     $outp .= '"apellidoP":"'. $rs["apellidoP"]     . '",' ;
     $outp .= '"apellidoM":"'. $rs["apellidoM"]     . '",' ;
     $outp .= '"nombre":"'. $rs["nombre"]     . '",' ;
