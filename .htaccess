@@ -1,3 +1,0 @@
-RewriteEngine on
-RewriteRule ^usuarios/ usuarios/controller.php
-RewriteRule ^login/ login/controller.php
