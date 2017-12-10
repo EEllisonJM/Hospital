@@ -20,7 +20,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
     <?php
   }
   else
-  $resultado = mysqli_query($conexion,"INSERT INTO area (nombre, descripcion, visible)
+  $resultado = mysqli_query($conexion,"INSERT INTO Area (nombre, descripcion, visible)
   VALUES ('".$_REQUEST["nombre"]."','".$_REQUEST["descripcion"]."', '1')");
  ?>
   <script>

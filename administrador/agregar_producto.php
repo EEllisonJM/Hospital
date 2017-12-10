@@ -11,7 +11,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
   //$_REQUEST registrar invoca al name del boton y lo compara con el value del input del boton
 {
 
-  $resultado = mysqli_query($conexion,"INSERT INTO farmacia (nomproducto, tipoproducto, existencia, precio, visible) 
+  $resultado = mysqli_query($conexion,"INSERT INTO Farmacia (nomproducto, tipoproducto, existencia, precio, visible) 
   VALUES ('".$_REQUEST["nombre"]."','".$_REQUEST["tipo"]."', '".$_REQUEST["existencia"]."', '".$_REQUEST["precio"]."', '1')");
 
 ?>

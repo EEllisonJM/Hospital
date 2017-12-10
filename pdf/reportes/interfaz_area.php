@@ -2,9 +2,9 @@
 session_start();
 ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
-include("configuraciondb.php"); //conexion de base de datos
+include("../../configuraciondb.php"); //conexion de base de datos
 include("menu.php");
-$consulta=mysqli_query($conexion, "SELECT DISTINCT tipoProducto FROM Farmacia WHERE visible=1");
+$consulta=mysqli_query($conexion, "SELECT * FROM Area WHERE visible=1");
 ?>
 <html>
 <head>
@@ -13,7 +13,7 @@ $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoProducto FROM Farmacia WH
 <body>
 
 <div class='centrar'>    
-<form action="tipo.php" target="confirma" onSubmit="confirma = window.open('','Confirma Mensaje, 'width=300 height=200, status=no scrollbars=no, location=no, resizable=no, manu=no');"  name="entrada_sistema" method="post" enctype="multipart/form-data">
+<form action="area.php" target="confirma" onSubmit="confirma = window.open('','Confirma Mensaje, 'width=300 height=200, status=no scrollbars=no, location=no, resizable=no, manu=no');"  name="entrada_sistema" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
         <label>Seleccione una opcion</label><br>
@@ -22,8 +22,8 @@ $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoProducto FROM Farmacia WH
   <option value="TODAS">TODAS LAS OPCIONES</option>
   <?php
   while ($row=mysqli_fetch_array($consulta)) {
-    echo "<option value='".$row['tipoProducto']."'>";
-    echo $row['tipoProducto'];
+    echo "<option value='".$row['idArea']."'>";
+    echo $row['nombre'];
     echo "</option>";
   }
   ?>

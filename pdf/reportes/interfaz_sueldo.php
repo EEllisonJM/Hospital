@@ -4,17 +4,17 @@ ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("configuraciondb.php"); //conexion de base de datos
 include("menu.php");
-$consulta=mysqli_query($conexion, "SELECT DISTINCT tipoProducto FROM farmacia WHERE visible=1");
+$consulta=mysqli_query($conexion, "SELECT DISTINCT tipoproducto FROM farmacia WHERE visible=1");
 ?>
+
 <html>
 <head>
-
 </head>
 
 <body>
 
 <div class='centrar'>    
-<form action="precio.php" target="confirma" onSubmit="confirma = window.open('','Confirma Mensaje, 'width=300 height=200, status=no scrollbars=no, location=no, resizable=no, manu=no');"  name="entrada_sistema" method="post" enctype="multipart/form-data">
+<form action="sueldo.php" target="confirma" onSubmit="confirma = window.open('','Confirma Mensaje, 'width=300 height=200, status=no scrollbars=no, location=no, resizable=no, manu=no');"  name="entrada_sistema" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
         <label>Seleccione un Opcion</label><br>

@@ -3,12 +3,12 @@
 require_once('../lib/pdf/mpdf.php');
 include ("configuraciondb.php");
 if($_REQUEST['todo'] == "Todos") {
-$query = "SELECT * FROM Farmacia WHERE visible=1";
+$query = "SELECT Empleado.idEmpleado, Empleado.nombre, Empleado.apellidoM, Puesto.sueldo FROM Empleado INNER JOIN Puesto ON Empleado.idPuesto=Puesto.idPuesto AND  Empleado.visible=1";
 }else{
 if($_REQUEST["menor"] < $_REQUEST["mayor"]){
-$query = "SELECT * FROM Farmacia WHERE visible=1 AND precio BETWEEN '".$_REQUEST["menor"]."' AND '".$_REQUEST["mayor"]."'";
+$query = "SELECT Empleado.idEmpleado, Empleado.nombre, Empleado.apellidoM, Puesto.sueldo FROM Empleado INNER JOIN Puesto ON Empleado.idPuesto=Puesto.idPuesto AND Puesto.sueldo BETWEEN '".$_REQUEST["menor"]."' AND '".$_REQUEST["mayor"]."'";
 }else{
-  $query = "SELECT * FROM Farmacia WHERE visible=1 AND precio BETWEEN '".$_REQUEST["mayor"]."' AND '".$_REQUEST["menor"]."'";
+  $query = "SELECT Empleado.idEmpleado, Empleado.nombre, Empleado.apellidoM, Puesto.sueldo FROM Empleado INNER JOIN Puesto ON Empleado.idPuesto=Puesto.idPuesto AND Puesto.sueldo BETWEEN '".$_REQUEST["mayor"]."' AND '".$_REQUEST["menor"]."'";
 }
 }
 $prepare = $conexion->prepare($query);
@@ -44,46 +44,26 @@ $html = '
       <table>
         <thead>
           <tr>
-            <th class="service">ID DEL PRODUCTO</th>
+            <th class="service">ID DEL EMPLEADO</th>
             <th class="desc">NOMBRE</th>
-            <th>TIPO</th>
-            <th>EXISTENCIA</th>
-            <th>PRECIO</th>
-            <th>TOTAL</th>
+            <th>APELLIDO PATERNO</th>
+            <th>SUELDO</th>
           </tr>
         </thead>
         <tbody>';
 
         foreach ($productos as $productos) {
         	$html.='         <tr>
-            <td class="service">'.$productos['idProducto'].'</td>
-            <td class="desc">'.$productos['nomProducto'].'</td>
-            <td class="desc">'.$productos['tipoProducto'].'</td>
-            <td class="unit">'.$productos['existencia'].'</td>
-            <td class="qty">$'.$productos['precio'].'</td>
-            <td class="total">$'.($productos['precio']*$productos['existencia']).'</td>
+            <td class="service">'.$productos['idEmpleado'].'</td>
+            <td class="desc">'.$productos['nombre'].'</td>
+            <td class="desc">'.$productos['apellidoM'].'</td>
+            <td class="unit">'.$productos['sueldo'].'</td>
           </tr>';
 
           $total = $total + ($productos['precio']*$productos['existencia']);
         }
 
         $html .= '
- <tr>
-            <td colspan="5">SUBTOTAL</td>
-            <td class="total">$'.$total.'</td>
-          </tr>
-          <tr>
-            <td colspan="5">SUBTOTAL</td>
-            <td class="total">$'.$total.'</td>
-          </tr>
-          <tr>
-            <td colspan="5">TAX 25%</td>
-            <td class="total">$'.($total* 0.25).'</td>
-          </tr>
-          <tr>
-            <td colspan="5" class="grand total">GRAND TOTAL</td>
-            <td class="grand total">$'.(($total* 0.25) + ($total)).'</td>
-          </tr>
         </tbody>
       </table>
       <div id="notices">
