@@ -84,6 +84,18 @@ Ser la organización modelo en el cuidado y restablecimiento de la salud, alinea
   <p>
 
   </p>
+  <footer>
+    = INTEGRANTES= <br>
+    García García Guillermo Ricardo<br>
+    Jiménez Martínez Erik Ellison<br>
+    Méndez Ramirez Ricardo<br>
+    Alberto Ramírez Ruiz<br>
+    
+    
+    
+    
+
+  </footer>
 </body>
 
 </html>
