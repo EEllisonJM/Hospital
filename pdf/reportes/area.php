@@ -5,9 +5,11 @@ error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 require_once('../lib/pdf/mpdf.php');
 include("../../configuraciondb.php");
 if ($_REQUEST['producto'] == "TODAS") {
-    $query = "SELECT * FROM RecursosHumanos WHERE visible=1";
+    $query = "SELECT rh.idEmpleado,e.nombre,p.sueldo,rh.idArea,rh.horaEntrada,rh.horaSalida,rh.bonificacion,rh.visible FROM RecursosHumanos as rh INNER JOIN Empleado as e INNER JOIN Puesto as p
+WHERE rh.idEmpleado=e.idEmpleado and e.idPuesto=p.idPuesto and rh.visible=1;";
 } else {
-    $query = "SELECT * FROM RecursosHumanos WHERE visible=1 AND idArea='" . $_REQUEST["producto"] . "'";
+    $query = "SELECT rh.idEmpleado,e.nombre,p.sueldo,rh.idArea,rh.horaEntrada,rh.horaSalida,rh.bonificacion,rh.visible FROM RecursosHumanos as rh INNER JOIN Empleado as e INNER JOIN Puesto as p
+WHERE rh.idEmpleado=e.idEmpleado and e.idPuesto=p.idPuesto and rh.visible=1 AND rh.idArea='" . $_REQUEST["producto"] . "'";
 }
 $prepare = $conexion->prepare($query);
 $prepare->execute();
@@ -44,6 +46,8 @@ $html = '
           <tr>
             <th class="service">ID EMPLEADO </th>
             <th class="desc">AREA</th>
+            <th>NOMBRE</th>
+            <th>SUELDO</th>
             <th>HORA ENTRADA</th>
             <th>HORA SALIDA</th>
             <th>BONIFICACION</th>
@@ -55,6 +59,8 @@ foreach ($productos as $productos) {
     $html .= '         <tr>
             <td class="service">' . $productos['idEmpleado'] . '</td>
             <td class="desc">' . $productos['idArea'] . '</td>
+            <td class="desc">' . $productos['nombre'] . '</td>
+            <td class="desc">' . $productos['sueldo'] . '</td>
             <td class="desc">' . $productos['horaEntrada'] . '</td>
             <td class="unit">' . $productos['horaSalida'] . '</td>
             <td class="qty">' . $productos['bonificacion'] . '</td>
