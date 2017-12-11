@@ -3,7 +3,6 @@
 require_once('../lib/pdf/mpdf.php');
 include ("../../configuraciondb.php");
 if($_REQUEST['perfecta'] == "perfecta") {
-<<<<<<< HEAD
 $query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre as nom, asistencia.fecha, asistencia.horaEntra, asistencia.horaSale 
 FROM empleado 
 INNER JOIN recursoshumanos ON empleado.idEmpleado = recursoshumanos.idEmpleado 
@@ -18,22 +17,6 @@ INNER JOIN recursoshumanos ON empleado.idEmpleado = recursoshumanos.idEmpleado
 INNER JOIN asistencia ON asistencia.idEmpleado=recursoshumanos.idEmpleado 
 INNER JOIN area ON area.idArea=recursoshumanos.idArea
 AND asistencia.horaEntra > recursosHumanos.horaEntrada";
-=======
-$query = "SELECT RecursosHumanos.idEmpleado, Empleado.nombre, Empleado.apellidoP, Empleado.apellidoM, Area.nombre as nom, Asistencia.fecha, RecursosHumanos.horaEntrada, RecursosHumanos.horaSalida 
-FROM Empleado 
-INNER JOIN RecursosHumanos ON Empleado.idEmpleado = RecursosHumanos.idEmpleado 
-INNER JOIN Asistencia ON Asistencia.idEmpleado=RecursosHumanos.idEmpleado 
-INNER JOIN Area ON Area.idArea=RecursosHumanos.idArea
-AND Asistencia.horaEntra <= RecursosHumanos.horaEntrada";
-}else{
-if($_REQUEST['inperfecta'] == "inperfecta"){
-$query = "SELECT RecursosHumanos.idEmpleado, Empleado.nombre, Empleado.apellidoP, Empleado.apellidoM, Area.nombre as nom, Asistencia.fecha, RecursosHumanos.horaEntrada, RecursosHumanos.horaSalida 
-FROM Empleado 
-INNER JOIN RecursosHumanos ON Empleado.idEmpleado = RecursosHumanos.idEmpleado 
-INNER JOIN Asistencia ON Asistencia.idEmpleado=RecursosHumanos.idEmpleado 
-INNER JOIN Area ON Area.idArea=RecursosHumanos.idArea
-AND Asistencia.horaEntra > RecursosHumanos.horaEntrada";
->>>>>>> 8496ad02a0ea55336fe98c9fa5b3c662b7c5aeb5
 }
 }
 $prepare = $conexion->prepare($query);
@@ -73,7 +56,7 @@ $html = '
             <th class="desc">NOMBRE</th>
             <th class="desc">APELLIDO P.</th>
             <th class="desc">APELLIDO M.</th>
-            <th class="desc">NOMBRE</th>
+            <th class="desc">NOMBRE DEL AREA</th>
             <th>FECHA</th>
             <th>HORA ENTRADA</th>
             <th>HORA SALIDA</th>
