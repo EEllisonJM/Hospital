@@ -1,22 +1,21 @@
-
 <?php
 require_once('../lib/pdf/mpdf.php');
 include ("../../configuraciondb.php");
 if($_REQUEST['perfecta'] == "perfecta") {
-$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre as nom, asistencia.fecha, asistencia.horaEntra, asistencia.horaSale 
-FROM empleado 
-INNER JOIN recursoshumanos ON empleado.idEmpleado = recursoshumanos.idEmpleado 
-INNER JOIN asistencia ON asistencia.idEmpleado=recursoshumanos.idEmpleado 
-INNER JOIN area ON area.idArea=recursoshumanos.idArea
-AND asistencia.horaEntra <= recursosHumanos.horaEntrada";
+$query = "SELECT RecursosHumanos.idEmpleado, Empleado.nombre, Empleado.apellidoP, Empleado.apellidoM, Area.nombre as nom, Asistencia.fecha, Asistencia.horaEntra, Asistencia.horaSale 
+FROM Empleado 
+INNER JOIN RecursosHumanos ON Empleado.idEmpleado = RecursosHumanos.idEmpleado 
+INNER JOIN Asistencia ON Asistencia.idEmpleado=RecursosHumanos.idEmpleado 
+INNER JOIN Area ON Area.idArea=RecursosHumanos.idArea
+AND Asistencia.horaEntra <= RecursosHumanos.horaEntrada";
 }else{
 if($_REQUEST['inperfecta'] == "inperfecta"){
-$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre as nom, asistencia.fecha, asistencia.horaEntra, asistencia.horaSale 
-FROM empleado 
-INNER JOIN recursoshumanos ON empleado.idEmpleado = recursoshumanos.idEmpleado 
-INNER JOIN asistencia ON asistencia.idEmpleado=recursoshumanos.idEmpleado 
-INNER JOIN area ON area.idArea=recursoshumanos.idArea
-AND asistencia.horaEntra > recursosHumanos.horaEntrada";
+$query = "SELECT RecursosHumanos.idEmpleado, Empleado.nombre, Empleado.apellidoP, Empleado.apellidoM, Area.nombre as nom, Asistencia.fecha, Asistencia.horaEntra, Asistencia.horaSale 
+FROM Empleado 
+INNER JOIN RecursosHumanos ON Empleado.idEmpleado = RecursosHumanos.idEmpleado 
+INNER JOIN Asistencia ON Asistencia.idEmpleado=RecursosHumanos.idEmpleado 
+INNER JOIN Area ON Area.idArea=RecursosHumanos.idArea
+AND Asistencia.horaEntra > RecursosHumanos.horaEntrada";
 }
 }
 $prepare = $conexion->prepare($query);
