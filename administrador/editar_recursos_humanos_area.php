@@ -26,13 +26,14 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
   <table border="2" align="center" class="table table-striped">
       <thead>
         <tr>
-          <td align="center" colspan="4">Datos</td>
+          <td align="center" colspan="7">Datos</td>
         </tr>
       </thead>
 
     <thead>
       <tr>
         <th>Empleado</th>
+		<th align="center" colspan="3">Nombre Completo</th>
         <th>Area</th>
         <th>Visible</th>
         <th>Acciones</th>
@@ -43,6 +44,18 @@ $ver_areas = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
     <td>
         <div ng-hide="viewField">{{ x.idEmpleado }}</div>
         <div ng-show="modifyField">{{ x.idEmpleado }}</div>
+    </td>
+	<td>
+        <div ng-hide="viewField">{{ x.apellidoP }}</div>
+        <div ng-show="modifyField">{{ x.apellidoP }}</div>
+    </td>
+	<td>
+        <div ng-hide="viewField">{{ x.apellidoM }}</div>
+        <div ng-show="modifyField">{{ x.apellidoM }}</div>
+    </td>
+	<td>
+        <div ng-hide="viewField">{{ x.nombre }}</div>
+        <div ng-show="modifyField">{{ x.nombre }}</div>
     </td>
     <td>
         <div ng-hide="viewField">{{ x.idArea }}</div>
