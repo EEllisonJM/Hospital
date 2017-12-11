@@ -49,7 +49,18 @@ include("menu.php");
     </td>
     <td>
         <div ng-hide="viewField">{{ x.visible | uppercase }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.visible" /></div>
+        <div ng-show="modifyField"><select ng-model="x.visible">
+        <?php
+      echo "<option value='" . "1" . "'>";
+      echo "Activado";
+      echo "</option>";
+      
+      echo "<option value='" . "0" . "'>";
+      echo "Desactivado";
+      echo "</option>";
+    ?>
+        </select>
+      </div>
     </td>
     <td>
         <button class="btn btn-warning" ng-hide="viewField" ng-click="modify(tableData)">Editar</button>
