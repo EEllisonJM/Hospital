@@ -3,7 +3,7 @@
 require_once('../lib/pdf/mpdf.php');
 include ("../../configuraciondb.php");
 if($_REQUEST['perfecta'] == "perfecta") {
-$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre, asistencia.fecha, recursoshumanos.horaEntrada, recursoshumanos.horaSalida 
+$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre as nom, asistencia.fecha, recursoshumanos.horaEntrada, recursoshumanos.horaSalida 
 FROM empleado 
 INNER JOIN recursoshumanos ON empleado.idEmpleado = recursoshumanos.idEmpleado 
 INNER JOIN asistencia ON asistencia.idEmpleado=recursoshumanos.idEmpleado 
@@ -11,7 +11,7 @@ INNER JOIN area ON area.idArea=recursoshumanos.idArea
 AND asistencia.horaEntra <= recursosHumanos.horaEntrada";
 }else{
 if($_REQUEST['inperfecta'] == "inperfecta"){
-$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre, asistencia.fecha, recursoshumanos.horaEntrada, recursoshumanos.horaSalida 
+$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre as nom, asistencia.fecha, recursoshumanos.horaEntrada, recursoshumanos.horaSalida 
 FROM empleado 
 INNER JOIN recursoshumanos ON empleado.idEmpleado = recursoshumanos.idEmpleado 
 INNER JOIN asistencia ON asistencia.idEmpleado=recursoshumanos.idEmpleado 
@@ -56,7 +56,7 @@ $html = '
             <th class="desc">NOMBRE</th>
             <th class="desc">APELLIDO P.</th>
             <th class="desc">APELLIDO M.</th>
-            <th class="desc">ID AREA</th>
+            <th class="desc">NOMBRE</th>
             <th>FECHA</th>
             <th>HORA ENTRADA</th>
             <th>HORA SALIDA</th>
@@ -71,7 +71,7 @@ $html = '
             <td class="desc">'.$productos['nombre'].'</td>
             <td class="desc">'.$productos['apellidoP'].'</td>
             <td class="desc">'.$productos['apellidoM'].'</td>
-            <td class="desc">'.$productos['idArea'].'</td>
+            <td class="desc">'.$productos['nom'].'</td>
             <td class="desc">'.$productos['fecha'].'</td>
             <td class="unit">'.$productos['horaEntra'].'</td>
             <td class="qty">'.$productos['horaSale'].'</td>
