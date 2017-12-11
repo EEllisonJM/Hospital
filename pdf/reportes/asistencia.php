@@ -3,7 +3,7 @@
 require_once('../lib/pdf/mpdf.php');
 include ("../../configuraciondb.php");
 if($_REQUEST['perfecta'] == "perfecta") {
-$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre as nom, asistencia.fecha, recursoshumanos.horaEntrada, recursoshumanos.horaSalida 
+$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre as nom, asistencia.fecha, asistencia.horaEntra, asistencia.horaSale 
 FROM empleado 
 INNER JOIN recursoshumanos ON empleado.idEmpleado = recursoshumanos.idEmpleado 
 INNER JOIN asistencia ON asistencia.idEmpleado=recursoshumanos.idEmpleado 
@@ -11,7 +11,7 @@ INNER JOIN area ON area.idArea=recursoshumanos.idArea
 AND asistencia.horaEntra <= recursosHumanos.horaEntrada";
 }else{
 if($_REQUEST['inperfecta'] == "inperfecta"){
-$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre as nom, asistencia.fecha, recursoshumanos.horaEntrada, recursoshumanos.horaSalida 
+$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, area.nombre as nom, asistencia.fecha, asistencia.horaEntra, asistencia.horaSale 
 FROM empleado 
 INNER JOIN recursoshumanos ON empleado.idEmpleado = recursoshumanos.idEmpleado 
 INNER JOIN asistencia ON asistencia.idEmpleado=recursoshumanos.idEmpleado 
