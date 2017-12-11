@@ -2,9 +2,7 @@
 session_start();
 ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
-include("../configuraciondb.php"); //conexion de base de datos
 include("menu.php");
-$verVisible = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
 ?>
 <html>
 <script src="../angular.min.js"></script>
