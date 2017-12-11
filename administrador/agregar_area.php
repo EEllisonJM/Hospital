@@ -19,7 +19,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
        </script>
     <?php
   }
-  else
+  else{
   $resultado = mysqli_query($conexion,"INSERT INTO Area (nombre, descripcion, visible)
   VALUES ('".$_REQUEST["nombre"]."','".$_REQUEST["descripcion"]."', '1')");
  ?>
@@ -27,6 +27,7 @@ if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="GERENTE"||$_SESSION["
                   alert("Area Agregada Exitosamente");
        </script>
        <?php
+     }
 }
 ?>
 <!DOCTYPE html>
