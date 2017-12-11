@@ -2,7 +2,9 @@
 session_start();
 ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
+include("../configuraciondb.php"); //conexion de base de datos
 include("menu.php");
+$verVisible = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
 ?>
 <html>
 <script src="../angular.min.js"></script>
@@ -64,8 +66,17 @@ include("menu.php");
         <div ng-show="modifyField"><input type="text" ng-model="x.precio" /></div>
     </td>
     <td>
-        <div ng-hide="viewField">{{ x.visible | uppercase }}</div>
-        <div ng-show="modifyField"><input type="text" ng-model="x.visible" /></div>
+        <div ng-hide="viewField">{{ x.visible }}</div>
+        <div ng-show="modifyField"><select name="Farmacia" ng-model="x.visible">
+        <?php    
+      echo "<option value='1'>";      
+      echo Activo;
+      echo "</option>";      
+      echo "<option value='0'>";      
+      echo Desactivado;
+      echo "</option>";
+    ?>
+        </select></div>
     </td>
     <td>
         <button class="btn btn-warning" ng-hide="viewField" ng-click="modify(tableData)">Editar</button>
