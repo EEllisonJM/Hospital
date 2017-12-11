@@ -41,7 +41,7 @@ $html = '
       <h1>HOSPITAL GENERAL</h1>
 
       <div id="project">
-        <div><span>REPORTE</span>  MEDICAMENTOS</div>
+        <div><span>REPORTE</span>  ASISTENCIA </div>
        
         <div><span>DIRECCION</span> Avenida Principal 123</div>
         <div><span>EMAIL</span>  nombre.apellido@ejemplo.com</a></div>
@@ -87,7 +87,7 @@ $html = '
       </table>
       <div id="notices">
         <div>NOTICE:</div>
-        <div class="notice">REPORTE DE MEDICAMENTOS EN EXISTENCIA EN EL AREA DE FARMACIAS GRACIAS POR SU PREFERENCIA</div>
+        <div class="notice">REPORTE  GRACIAS POR SU PREFERENCIA</div>
       </div>
     </main>';
 $mpdf = new mPDF('c', 'A4');
