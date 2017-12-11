@@ -3,10 +3,10 @@
 require_once('../lib/pdf/mpdf.php');
 include ("../../configuraciondb.php");
 if($_REQUEST['perfecta'] == "perfecta") {
-$query = "SELECT RecursosHumanos.idEmpleado, RecursosHumanos.idArea, Asistencia.fecha, Asistencia.horaEntra, Asistencia.horaSale FROM RecursosHumanos INNER JOIN Asistencia ON RecursosHumanos.idEmpleado=Asistencia.idEmpleado AND Asistencia.horaEntra <= RecursosHumanos.horaEntrada";
+$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, recursoshumanos.idArea, asistencia.fecha, recursoshumanos.horaEntrada, recursoshumanos.horaSalida FROM empleado INNER JOIN recursoshumanos ON empleado.idEmpleado = recursoshumanos.idEmpleado INNER JOIN asistencia ON asistencia.idEmpleado=recursoshumanos.idEmpleado AND asistencia.horaEntra <= recursoshumanos.horaEntrada AND Asistencia.horaEntra <= RecursosHumanos.horaEntrada";
 }else{
 if($_REQUEST['inperfecta'] == "inperfecta"){
-$query = "SELECT RecursosHumanos.idEmpleado, RecursosHumanos.idArea, Asistencia.fecha, Asistencia.horaEntra, Asistencia.horaSale FROM RecursosHumanos INNER JOIN Asistencia ON RecursosHumanos.idEmpleado=Asistencia.idEmpleado AND Asistencia.horaEntra >= RecursosHumanos.horaEntrada";
+$query = "SELECT recursoshumanos.idEmpleado, empleado.nombre, empleado.apellidoP, empleado.apellidoM, recursoshumanos.idArea, asistencia.fecha, recursoshumanos.horaEntrada, recursoshumanos.horaSalida FROM empleado INNER JOIN recursoshumanos ON empleado.idEmpleado = recursoshumanos.idEmpleado INNER JOIN asistencia ON asistencia.idEmpleado=recursoshumanos.idEmpleado AND asistencia.horaEntra <= recursoshumanos.horaEntrada AND Asistencia.horaEntra >= RecursosHumanos.horaEntrada";
 }
 }
 $prepare = $conexion->prepare($query);
@@ -43,6 +43,9 @@ $html = '
         <thead>
           <tr>
             <th class="service">ID DEL EMPLEADO</th>
+            <th class="desc">NOMBRE</th>
+            <th class="desc">APELLIDO P.</th>
+            <th class="desc">APELLIDO M.</th>
             <th class="desc">ID AREA</th>
             <th>FECHA</th>
             <th>HORA ENTRADA</th>
@@ -55,6 +58,9 @@ $html = '
         foreach ($productos as $productos) {
         	$html.='         <tr>
             <td class="service">'.$productos['idEmpleado'].'</td>
+            <td class="desc">'.$productos['nombre'].'</td>
+            <td class="desc">'.$productos['apellidoP'].'</td>
+            <td class="desc">'.$productos['apellidoM'].'</td>
             <td class="desc">'.$productos['idArea'].'</td>
             <td class="desc">'.$productos['fecha'].'</td>
             <td class="unit">'.$productos['horaEntra'].'</td>
