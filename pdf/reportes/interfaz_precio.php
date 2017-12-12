@@ -37,3 +37,15 @@ $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoProducto FROM farmacia WH
 
 </body>
 </html>
+<?php
+
+}
+// cuando no este logueado (iniciado sesion) mostrara la siguiente alerta de acceso denegado y redireccionara al login de inicio de sesion
+else {
+?>
+  <script>
+       window.location = "../../administrador/admin.php";
+   </script>
+<?php
+}
+?>
