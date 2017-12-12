@@ -5,6 +5,8 @@ error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("../../configuraciondb.php"); //conexion de base de datos
 include("menu.php");
 $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoProducto FROM farmacia WHERE visible=1");
+
+if ($_SESSION["tipo"] == "ADMINISTRADOR" || $_SESSION["tipo"] == "GERENTE" || $_SESSION["tipo"] == "JEFE DE AREA" || $_SESSION["tipo"] == "ENCARGADO DE FARMACIA" || $_SESSION["tipo"] == "JEFE DE RECURSOS HUMANOS") {
 ?>
 <html>
 <head>
