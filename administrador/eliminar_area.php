@@ -4,6 +4,7 @@ ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("../configuraciondb.php"); //conexion de base de datos
 include("menu.php");
+if ($_SESSION["tipo"] == "ADMINISTRADOR" ||  $_SESSION["tipo"] == "JEFE DE AREA") {
 ?>
 <html>
 <script src="../angular.min.js"></script>
@@ -82,3 +83,17 @@ $scope.delete = function(tableData){
     };
 });
 </script>
+
+<?php
+}
+// cuando no este logueado (iniciado sesion) mostrara la siguiente alerta de acceso denegado y redireccionara al login de inicio de sesion
+else {
+?>
+  <script>
+       alert("Acceso Denegado");
+       window.location = "../ses/logueo.php";
+   </script>
+<?php
+}
+?> 
+
