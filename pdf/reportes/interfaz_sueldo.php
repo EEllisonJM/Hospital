@@ -5,6 +5,8 @@ error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("../../configuraciondb.php"); //conexion de base de datos
 include("menu.php");
 $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoproducto FROM Farmacia WHERE visible=1");
+
+if ($_SESSION["tipo"] == "ADMINISTRADOR" || $_SESSION["tipo"] == "GERENTE" || $_SESSION["tipo"] == "JEFE DE AREA" || $_SESSION["tipo"] == "ENCARGADO DE FARMACIA" || $_SESSION["tipo"] == "JEFE DE RECURSOS HUMANOS") {
 ?>
 
 <html>
@@ -37,3 +39,16 @@ $consulta=mysqli_query($conexion, "SELECT DISTINCT tipoproducto FROM Farmacia WH
 
 </body>
 </html>
+
+<?php
+
+}
+// cuando no este logueado (iniciado sesion) mostrara la siguiente alerta de acceso denegado y redireccionara al login de inicio de sesion
+else {
+?>
+  <script>
+       window.location = "../../administrador/admin.php";
+   </script>
+<?php
+}
+?>
