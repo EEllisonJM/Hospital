@@ -4,6 +4,8 @@ ob_start();
 error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
 include("../configuraciondb.php"); //conexion de base de datos
 include("menu.php");
+if($_SESSION["tipo"]=="ADMINISTRADOR"||$_SESSION["tipo"]=="JEFE DE RECURSOS HUMANOS")
+{
 $ver_areas = mysqli_query($conexion, "SELECT * FROM Area WHERE visible = 1");
 ?>
 <html>
@@ -133,3 +135,16 @@ $http.post("../Update_RecursosHumanos_Sueldo.php",{
     };
 });
 </script>
+<?php
+}
+// cuando no este logueado (iniciado sesion) mostrara la siguiente alerta de acceso denegado y redireccionara al login de inicio de sesion
+else
+  {
+?>
+    <script>
+        alert("Acceso Denegado");
+        window.location = "../ses/logueo.php";
+    </script>
+<?php
+  }
+?>

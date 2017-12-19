@@ -1,7 +1,7 @@
 <?php
 session_start();
 ob_start();
-error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
+error_reporting(E_ALL ^ E_NOTICE);/*Mo mostrar errores de sintaxis*/
 include("menu.php");
 if ($_SESSION["tipo"] == "ADMINISTRADOR" ||  $_SESSION["tipo"] == "ENCARGADO DE FARMACIA") {
 ?>
@@ -12,6 +12,7 @@ if ($_SESSION["tipo"] == "ADMINISTRADOR" ||  $_SESSION["tipo"] == "ENCARGADO DE 
   <title>Hospital</title>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="estilo_admin.css">
+  
   <link rel="stylesheet" href="estilo.css">
 
 </head>
@@ -79,10 +80,7 @@ if ($_SESSION["tipo"] == "ADMINISTRADOR" ||  $_SESSION["tipo"] == "ENCARGADO DE 
     </td>
     <td>
         <button class="btn btn-warning" ng-hide="viewField" ng-click="modify(tableData)">Editar</button>
-        <button class="btn btn-sucess" ng-show="modifyField" ng-click="update(x) ">Guardar</button>
-        <!-- <button class="btn btn-danger" ng-hide="viewField" ng-click="delete(x)">Eliminar</button> -->
-
-    </td>
+        <button class="btn btn-sucess" ng-show="modifyField" ng-click="update(x) ">Guardar</button></td>
   </tr>
 
 </table>

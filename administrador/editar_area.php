@@ -50,7 +50,8 @@ if ($_SESSION["tipo"] == "ADMINISTRADOR" ||  $_SESSION["tipo"] == "JEFE DE AREA"
     </td>
     <td>
         <div ng-hide="viewField">{{ x.visible | uppercase }}</div>
-        <div ng-show="modifyField"><select ng-model="x.visible">
+        <div ng-show="modifyField">
+          <select ng-model="x.visible">
         <?php
       echo "<option value='" . "1" . "'>";
       echo "Activado";
